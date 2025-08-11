@@ -3,6 +3,8 @@ table {
   border-collapse: separate;
   border-spacing: 0;
 
+  /* margin-block-end: 4rem; */
+
   thead {
     background-color: var(--color-gray-3);
 
