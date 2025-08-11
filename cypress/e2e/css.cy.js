@@ -5,7 +5,8 @@ const readCss = (path) =>
   });
 
 const expectOnlyVars = (css, props) => {
-  const allowedKeywords = /:\s*(transparent|currentcolor|inherit|initial|unset)\s*;/i;
+  const allowedKeywords =
+    /:\s*(transparent|currentcolor|inherit|initial|unset)\s*;/i;
   const allowedVar = /:\s*var\(--[a-z0-9-]+\)\s*;/i;
   props.forEach((prop) => {
     const regex = new RegExp(`${prop}:[^;]*;`, "gi");
@@ -13,7 +14,10 @@ const expectOnlyVars = (css, props) => {
     matches.forEach((decl) => {
       // Allow CSS keywords that are reasonable for colors, otherwise require var(--...)
       const ok = allowedKeywords.test(decl) || allowedVar.test(decl);
-      expect(ok, `Declaration must use var(--...) or allowed keyword for ${prop}: ${decl}`).to.be.true;
+      expect(
+        ok,
+        `Declaration must use var(--...) or allowed keyword for ${prop}: ${decl}`,
+      ).to.be.true;
     });
   });
 };

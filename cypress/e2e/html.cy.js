@@ -47,7 +47,8 @@ describe("HTML structure and semantics", () => {
     cy.get("header a.link-button").as("gh");
     cy.get("@gh").should("have.attr", "href").and("contain", "github.com");
     cy.get("@gh").should("contain.text", "GitHub");
-    cy.get("@gh").find(".icon")
+    cy.get("@gh")
+      .find(".icon")
       .should("have.attr", "src", "/assets/icons/github.svg")
       .and("have.attr", "alt", "");
   });
