@@ -1,0 +1,46 @@
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+
+  .field {
+    display: grid;
+    gap: 0.5rem;
+
+    label {
+    }
+
+    input,
+    textarea {
+      background-color: var(--color-gray-1);
+
+      padding: 0.5rem 1rem;
+
+      border: 1px solid var(--color-gray-5);
+      border-radius: var(--border-radius);
+
+      outline: none;
+
+      &:focus {
+        border-color: var(--color-blue-6);
+      }
+    }
+
+    textarea {
+      min-block-size: 5rem;
+      max-block-size: 7rem;
+      resize: vertical;
+    }
+  }
+
+  .field:has(textarea) {
+    grid-column: 1 / -1;
+  }
+
+  button {
+    grid-column: 2 / -1;
+    justify-self: end;
+
+    inline-size: max-content;
+  }
+}
