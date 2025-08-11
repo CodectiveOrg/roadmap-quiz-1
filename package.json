@@ -1,0 +1,14 @@
+{
+  "name": "roadmap-quiz-1",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "live-server --port=3000",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run --headless",
+    "test": "npm run cy:run"
+  },
+  "devDependencies": {
+    "cypress": "^14.5.4",
+    "live-server": "^1.2.2"
+  }
+}
