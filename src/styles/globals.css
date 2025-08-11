@@ -1,0 +1,23 @@
+html {
+    font-family: Codective sans-serif;
+
+    body {
+        max-inline-size: 60rem;
+
+        background-color: var(--color-gray-1);
+        color: var(--color-gray-10);
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .actions{
+            gap: 1rem;
+        }
+
+        table > thead {
+            background-color: var(--color-gray-3);
+        }
+    }
+}
