@@ -137,7 +137,7 @@ Do not convert `rem` to `px` and do not use `font-size: 62.5%` trick.
     - [ ] `textarea` with `id` of `description`, `name` of `description`, `minlength` of `3`, and `required`
   - [ ] Actions which is a `div` with `class` of `actions` containing:
     - [ ] Reset `button` with `class` of `button` and `Cancel` as text
-    - [ ] Cancel `button` with `class` of `button` and `Submit` as text
+    - [ ] Submit `button` with `class` of `button` and `Submit` as text
 - [ ] Table includes:
   - [ ] `thead` with headers in order: `Row`, `Title`, `Author`, `Description`, `Actions`
   - [ ] `tbody` tag populated by JavaScript
