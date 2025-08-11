@@ -1,0 +1,8 @@
+html {
+  font-family: Codective, sans-serif;
+}
+
+body {
+  background-color: var(--color-gray-1);
+  color: var(--color-gray-10);
+}
