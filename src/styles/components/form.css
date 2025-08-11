@@ -3,12 +3,12 @@ form {
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
 
+  margin-block: 2rem;
+
   .field {
     display: grid;
+    align-items: center;
     gap: 0.5rem;
-
-    label {
-    }
 
     input,
     textarea {
