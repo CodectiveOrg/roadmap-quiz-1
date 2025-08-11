@@ -1,8 +1,10 @@
 class LibraryManager {
-  #books;
+  #books = [];
 
   constructor(books) {
-    this.#books = this.clone(books);
+    for (const book in books) {
+      this.#books.push(clone(book));
+    }
   }
 
   get books() {
@@ -23,8 +25,8 @@ class LibraryManager {
     this.#books.splice(index, 1);
   }
 
-  clone(books) {
-    return structuredClone(books);
+  clone(book) {
+    return structuredClone(book);
   }
 }
 

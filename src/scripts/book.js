@@ -6,7 +6,11 @@ class Book {
   }
 
   clone(title, author, description) {
-    return structuredClone(new Book(title, author, description));
+    return structuredClone({
+      title,
+      author,
+      description,
+    });
   }
 }
 
