@@ -1,159 +1,219 @@
-### Roadmap Quiz 1 — Build the Library Management System ✅
+# Roadmap Quiz 1: 📚 Library Management System 📚
 
-Welcome! Your goal is to rebuild the UI and logic so that all automated tests pass locally and in CI. You’ll start from a minimal starter and must implement the full structure, styling, and logic exactly as specified below.
+Welcome!
+Consider that we're developing a web app for a library.
+The client wants following features:
 
-Use this guide carefully. It tells you exactly what to build, where to put files, how to style things, and how to verify your solution — without giving away the full code.
+- View all books.
+- Add a new book.
+- Edit an existing book.
+- Remove an existing book.
 
-### What you get in the starter
+Since currently you don't have the knowledge to develop a JavaScript project for the web,
+all the work regarding that matter has already done,
+and you don't need to know worry about it.  
+The only thing you need to do is to write the proper logic according to client's requested features.
+
+## Goal
+
+You'll start from a minimal initial project and must implement the full structure, styling, and logic exactly as specified below.
+Your goal is to build the UI and logic so that all automated tests pass locally and in CI.
+
+Use this guide carefully.
+It tells you exactly what to build, where to put files, how to style things, and how to verify your solution.
+
+## What You Get in the Initial Project
 
 - `index.html` with a minimal skeleton and one example table row
 - `assets/` containing fonts and icons
 - `src/scripts/master.js` and `src/scripts/data.js`, plus a script link to `master.js` in `index.html`
 - Test setup (Cypress + `package.json`) so you can run tests locally
 - `.gitignore` (ignore it)
-- A screenshot of the final UI (will be added later)
+- `goal.png` which is a screenshot of the final UI
 
-Everything else you must create.
+Everything else you must create yourself.
 
-### How your submission is graded
+## How Your Submission Is Graded
 
-- Automated Cypress tests run locally and on GitHub pull requests.
+- Automated Cypress tests run locally (`npm test`) and on GitHub pull requests.
 - Tests verify:
   - HTML structure and semantics
   - CSS design tokens and usage, including computed visuals
-  - JS logic for listing, adding, editing, and removing books
+  - JavaScript logic for listing, adding, editing, and removing books
   - Files/folders and asset paths
-- The layout method (flex vs grid) doesn’t matter. Visual outcome, naming, and structure do.
+- The layout method (flex vs grid) doesn't matter. Visual outcome, naming, and structure do.
 
-### Required project structure (must match exactly)
+## Required Project Structure (Must Match Exactly)
 
 ```
-assets/
-  icons/
-    edit.svg
-    remove.svg
-    github.svg
-  fonts/
-    codective/
-      regular.ttf
-      italic.ttf
-      bold.ttf
-      bold-italic.ttf
-src/
-  scripts/
-    book.js
-    library-manager.js
-    data.js      # provided
-    master.js    # provided
-  styles/
-    globals.css
-    shared/
-      colors.css
-      fonts.css
-      shapes.css
-    components/
-      button.css
-      link-button.css
-      icon-button.css
-      header.css
-      form.css
-      table.css
-      footer.css
+.
+├── index.html
+├── assets/
+│   ├── icons/
+│   │   ├── edit.svg
+│   │   ├── remove.svg
+│   │   └── github.svg
+│   └── fonts/
+│       └── codective/
+│           ├── regular.ttf
+│           ├── italic.ttf
+│           ├── bold.ttf
+│           └── bold-italic.ttf
+└── src/
+    ├── scripts/
+    │   ├── book.js
+    │   ├── library-manager.js
+    │   ├── data.js
+    │   └── master.js
+    └── styles/
+        ├── globals.css
+        ├── shared/
+        │   ├── colors.css
+        │   ├── fonts.css
+        │   └── shapes.css
+        └── components/
+            ├── button.css
+            ├── link-button.css
+            ├── icon-button.css
+            ├── header.css
+            ├── form.css
+            ├── table.css
+            └── footer.css
 ```
 
-Do not rename or move these files. Tests also request these resources over HTTP to ensure they exist and are linked.
+Do not rename or move these files.
 
-### HTML requirements (what to build)
+## Notes
+
+### Paths
+
+All paths have to be absolute with leading slash.  
+For example these are correct:
+
+- ✅ `/assets/fonts/codective/regular.ttf`
+- ✅ `/src/styles/components/link-button.css`
+
+And these are incorrect:
+
+- ❌ `assets/fonts/codective/regular.ttf`
+- ❌ `./src/styles/components/link-button.css`
+
+### CSS Variables
+
+You should use css variables with exact name and value that is mentioned in this document.  
+Do not use any color directly; Use a variable instead.  
+This also applies for the `border-raduis`;
+
+### CSS Values
+
+You should only use `hsl` for colors.  
+Also pay attention to units mentioned in this document and use them exactly as is.  
+Do not convert `rem` to `px` and do not use `font-size: 62.5%` trick.
+
+## HTML Requirements
 
 - [ ] DOCTYPE present
-- [ ] `<html lang="en">`
-- [ ] `<meta charset="UTF-8">`
-- [ ] `<meta http-equiv="X-UA-Compatible" content="ie=edge">`
-- [ ] `<title>Library Management System</title>`
-- [ ] Link all stylesheets (exact hrefs):
-  - [ ] `/src/styles/globals.css`
-  - [ ] `/src/styles/shared/colors.css`
-  - [ ] `/src/styles/shared/shapes.css`
-  - [ ] `/src/styles/shared/fonts.css`
-  - [ ] `/src/styles/components/button.css`
-  - [ ] `/src/styles/components/link-button.css`
-  - [ ] `/src/styles/components/icon-button.css`
-  - [ ] `/src/styles/components/header.css`
-  - [ ] `/src/styles/components/form.css`
-  - [ ] `/src/styles/components/table.css`
-  - [ ] `/src/styles/components/footer.css`
-- [ ] Load JS with `<script type="module" src="/src/scripts/master.js"></script>`
+- [ ] `html` with correct `lang`
+- [ ] `meta` with `charset` of `UTF-8`
+- [ ] `meta` with `http-equiv` of `X-UA-Compatible` and `content` of `ie=edge`
+- [ ] `title` with `Library Management System` as text
+- [ ] Link all stylesheets separately
+- [ ] Link only `master.js` with `type` of `module`
 - [ ] Header includes:
-  - [ ] `<h1 class="logo">Library Management System</h1>`
-  - [ ] GitHub link: `<a class="link-button" href="https://github.com/...">`
-    - [ ] Contains `<img class="icon" src="/assets/icons/github.svg" alt="">`
-    - [ ] Contains the text `GitHub`
+  - [ ] `h1` with `class` of `logo` and `Library Management System` as text
+  - [ ] `a` with `class` of `link-button` and href of your own GitHub profile page (ie: `https://github.com/BijanProgrammer`)
+    - [ ] Contains `img` with `class` of `icon`, proper `src`, and blank `alt`
+    - [ ] Contains `GitHub` as text (no `span` required)
 - [ ] Form includes:
-  - [ ] Title: `<label for="title">` + `<input id="title" name="title" required>`
-  - [ ] Author: `<label for="author">` + `<input id="author" name="author" autocomplete="name" required>`
-  - [ ] Description: `<label for="description">` + `<textarea id="description" name="description" minlength="3" required></textarea>`
-  - [ ] Actions: `<div class="actions">` with
-    - [ ] `<button class="button" type="reset">Cancel</button>`
-    - [ ] `<button class="button" type="submit">Submit</button>`
+  - [ ] Title
+    - [ ] `label` with `for` of `title`
+    - [ ] `input` with `id` of `title`, `name` of `title`, and `required`
+  - [ ] Author
+    - [ ] `label` with `for` of `author`
+    - [ ] `input` with `id` of `author`, `name` of `author`, `autocomplete` of `name`, and `required`
+  - [ ] Description
+    - [ ] `label` with `for` of `description`
+    - [ ] `textarea` with `id` of `description`, `name` of `description`, `minlength` of `3`, and `required`
+  - [ ] Actions which is a `div` with `class` of `actions` containing:
+    - [ ] Reset `button` with `class` of `button` and `Cancel` as text
+    - [ ] Cancel `button` with `class` of `button` and `Submit` as text
 - [ ] Table includes:
-  - [ ] `<thead>` headers in order: `Row`, `Title`, `Author`, `Description`, `Actions`
-  - [ ] `<tbody>` is populated by JS
-  - [ ] For data cells, `title` attribute equals the cell text (actions cell excluded)
-- [ ] Footer contains the text `codective.ir`
+  - [ ] `thead` with headers in order: `Row`, `Title`, `Author`, `Description`, `Actions`
+  - [ ] `tbody` tag populated by JavaScript
+  - [ ] In `tbody`, the first cell of each row is a `th` tag showing the 1-based row number
+  - [ ] In `tbody`, `td` tags for Title/Author/Description have `title` attribute equal to the cell text (Do not set `title` on the Actions cell)
+- [ ] `footer` contains the text `codective.ir`
 
-### CSS requirements (design tokens and usage)
+## CSS Requirements
 
-Design tokens — define these in `:root` in `/src/styles/shared/colors.css` using HSL (HSL only):
+### Design tokens
 
-| Variable name      | Value (HSL only)       |
-| ------------------ | ---------------------- |
-| `--color-gray-1`   | `hsl(0, 0%, 100%)`     |
-| `--color-gray-3`   | `hsl(0, 0%, 96%)`      |
-| `--color-gray-5`   | `hsl(0, 0%, 85%)`      |
-| `--color-gray-10`  | `hsl(0, 0%, 15%)`      |
-| `--color-blue-1`   | `hsl(199, 100%, 95%)`  |
-| `--color-blue-6`   | `hsl(209, 100%, 55%)`  |
-| `--color-blue-7`   | `hsl(211, 92%, 44%)`   |
-| `--color-red-6`    | `hsl(357, 91%, 55%)`   |
+define these in `:root` in `colors.css`:
 
-Shapes — in `/src/styles/shared/shapes.css`:
+| Variable          | Value                 |
+| ----------------- | --------------------- |
+| `--color-gray-1`  | `hsl(0, 0%, 100%)`    |
+| `--color-gray-3`  | `hsl(0, 0%, 96%)`     |
+| `--color-gray-5`  | `hsl(0, 0%, 85%)`     |
+| `--color-gray-10` | `hsl(0, 0%, 15%)`     |
+| `--color-blue-1`  | `hsl(199, 100%, 95%)` |
+| `--color-blue-6`  | `hsl(209, 100%, 55%)` |
+| `--color-blue-7`  | `hsl(211, 92%, 44%)`  |
+| `--color-red-6`   | `hsl(357, 91%, 55%)`  |
 
-- [ ] `--border-radius: 0.5rem`
+### Shapes
 
-Fonts — in `/src/styles/shared/fonts.css` (declare 4 @font-face rules that map to the assets below and set the global family):
+define these in `:root` in `shapes.css`:
 
-- [ ] `font-family: Codective` (normal 400) → `/assets/fonts/codective/regular.ttf`
-- [ ] `font-family: Codective` (italic 400) → `/assets/fonts/codective/italic.ttf`
-- [ ] `font-family: Codective` (normal 700) → `/assets/fonts/codective/bold.ttf`
-- [ ] `font-family: Codective` (italic 700) → `/assets/fonts/codective/bold-italic.ttf`
-- [ ] `html { font-family: Codective, sans-serif }`
+| Variable          | Value    |
+| ----------------- | -------- |
+| `--border-radius` | `0.5rem` |
 
-Usage rules — in component styles (`globals.css`, `components/*.css`):
+### Fonts
+
+define these in `fonts.css`:
+
+| `font-style` | `font-weight` | `src`             |
+| ------------ | ------------- | ----------------- |
+| `normal`     | `400`         | `regular.ttf`     |
+| `italic`     | `400`         | `italic.ttf`      |
+| `normal`     | `700`         | `bold.ttf`        |
+| `italic`     | `700`         | `bold-italic.ttf` |
+
+Declare 4 `@font-face` rules that map to the assets above.  
+Use `Codective` as `font-family` for all of them.
+
+### Usage rules
+
+In component styles (`globals.css`, `components/*.css`):
 
 - [ ] For `color`, `background-color`, `border-color`, `outline-color` use only `var(--...)`
-- [ ] Do not use raw color values in declarations (no hex, rgb, hsl). Allowed keywords: `transparent`, `currentColor`, `inherit`, `initial`, `unset`
+- [ ] Do not use raw color values in declarations (no hex, rgb, hsl)
+- [ ] Allowed keywords: `transparent`, `currentColor`, `inherit`, `initial`, `unset`
 
-Computed visual outcomes (don’t care how you implement, only the result):
+Computed visual outcomes:
 
-- [ ] Body background computes to `rgb(255, 255, 255)` and text color to `rgb(38, 38, 38)`
-- [ ] Header logo font-size is about `1.5rem` (≈24px) and font-weight is bold/700
-- [ ] Form actions (`.actions`) have a positive gap between children
-- [ ] Table header background computes to `rgb(245, 245, 245)`
+- [ ] Body `background-color` is `--color-gray-1` and its `color` is `--color-gray-10`
+- [ ] Header logo `font-size` is `1.5rem` and `font-weight` is `700`
+- [ ] Form actions (`.actions`) have a positive `gap` between children
+- [ ] Table header `background-color` is `--color-gray-3`
 
-### JavaScript requirements (what to implement)
+## JavaScript Requirements
 
-You are given `master.js` (renders UI, wires events) and `data.js` (provides `initialBooks`). You must implement the following modules with the exact names and behaviors. Do not paste large code from elsewhere — write these yourself.
+You are given `master.js` (renders UI, wires events) and `data.js` (provides `initialBooks`).  
+You must implement the following modules with the exact names and behaviors.  
+Do not paste large code from elsewhere - write these yourself.
 
-`src/scripts/book.js` — required fields and behavior
+### book.js
 
-- [ ] Class name: `Book`
+- [ ] Class: `Book`
 - [ ] Public fields: `title`, `author`, `description`
 - [ ] Constructor accepts `(title, author, description)` and assigns to fields
 - [ ] Instance method: `clone()` returns a new `Book` with the same field values
 
-`src/scripts/library-manager.js` — required fields and behavior
+### library-manager.js
 
-- [ ] Class name: `LibraryManager`
+- [ ] Class: `LibraryManager`
 - [ ] Private field: `#books`
 - [ ] Constructor accepts an array of `Book` and stores a cloned copy (not the same references)
 - [ ] Getter: `books` returns the internal array
@@ -162,17 +222,17 @@ You are given `master.js` (renders UI, wires events) and `data.js` (provides `in
 - [ ] Method: `removeBook(row)` removes the book at 1-based index `row`
 - [ ] Method: `clone()` returns a deep copy (new `LibraryManager` with cloned books)
 
-End-to-end behaviors (what must work in the UI):
+### Logic
 
-- [ ] On load, the table shows at least the 3 books from `initialBooks`
+- [ ] On load, the table shows the 3 books from `initialBooks`
 - [ ] Submitting the form adds a new row with the provided title/author/description
-- [ ] Clicking a row’s first action (Edit) loads that row into the form; submitting saves the changes back to the table
-- [ ] Clicking a row’s second action (Remove) deletes the row and the first column reindexes starting at `1`
-- [ ] Row actions use exact icons and `alt`:
-  - [ ] Edit: `src="/assets/icons/edit.svg"`, `alt="Edit Icon"`
-  - [ ] Remove: `src="/assets/icons/remove.svg"`, `alt="Remove Icon"`
+- [ ] Clicking a row's first action (Edit) loads that row into the form; submitting saves the changes back to the table
+- [ ] Clicking a row's second action (Remove) deletes the row and the first column reindexes starting at `1`
+- [ ] Row actions use these icons and `alt`:
+  - [ ] Edit: `edit.svg"` and `alt="Edit Icon"`
+  - [ ] Remove: `remove.svg"` and `alt="Remove Icon"`
 
-### How to run and test locally
+## How To Run and Test Locally
 
 - [ ] Install dependencies: `npm install`
 - [ ] Run tests (headless): `npm test`
@@ -180,28 +240,16 @@ End-to-end behaviors (what must work in the UI):
 
 The tests will start a local server and run end-to-end checks automatically.
 
-### CI on GitHub (automatic)
+## CI on GitHub (Automatic)
 
 - When you open a pull request, GitHub Actions run the same Cypress tests automatically.
 - Ensure your branch includes all required files and exact paths so CI can fetch them.
 
-### Troubleshooting 🧩
-
-- Color-related test fails
-  - Check component CSS for raw hex/rgb/hsl values. Replace with `var(--...)`
-  - Only tokens in `:root` should contain HSL color values
-- Missing asset/path test
-  - Confirm all required files exist and are linked in `<head>`
-- Header icon or alt failure
-  - Ensure header anchor contains `<img class="icon" src="/assets/icons/github.svg" alt="">` and the text `GitHub`
-- Row index test fails after removing
-  - Ensure `removeBook(row)` removes correctly and table re-renders
-
-### Submission tips
+## Submission Tips
 
 - Keep naming consistent with this guide
 - Use Prettier to keep formatting clean
 - Run tests locally before pushing
-- Once everything is green locally, open a PR to trigger CI
+- Once everything is green, open a PR to trigger CI
 
-Good luck! You’ve got this 🚀
+Good luck! You've got this 🚀
