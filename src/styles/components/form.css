@@ -5,8 +5,6 @@ form {
 
   margin-block: 2rem;
 
-  max-inline-size: 40rem;
-
   .field {
     display: grid;
     align-items: center;
@@ -39,9 +37,11 @@ form {
     grid-column: 1 / -1;
   }
 
-  button {
-    grid-column: 1 / 2;
+  .actions {
+    grid-column: 2 / -1;
+    justify-self: end;
 
-    inline-size: max-content;
+    display: flex;
+    gap: 1rem;
   }
 }

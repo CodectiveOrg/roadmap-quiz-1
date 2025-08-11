@@ -21,6 +21,10 @@ body {
   background-color: var(--color-gray-1);
   color: var(--color-gray-10);
 
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+
+  min-block-size: 100dvh;
   max-inline-size: 60rem;
 
   margin-inline: auto;

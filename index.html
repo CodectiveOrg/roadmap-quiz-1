@@ -9,25 +9,27 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Library Management System</title>
 
-    <link rel="stylesheet" href="src/styles/globals.css" />
-    <link rel="stylesheet" href="src/styles/shared/colors.css" />
-    <link rel="stylesheet" href="src/styles/shared/shapes.css" />
-    <link rel="stylesheet" href="src/styles/shared/fonts.css" />
+    <link rel="stylesheet" href="/src/styles/globals.css" />
+    <link rel="stylesheet" href="/src/styles/shared/colors.css" />
+    <link rel="stylesheet" href="/src/styles/shared/shapes.css" />
+    <link rel="stylesheet" href="/src/styles/shared/fonts.css" />
 
-    <link rel="stylesheet" href="src/styles/components/button.css" />
-    <link rel="stylesheet" href="src/styles/components/link-button.css" />
-    <link rel="stylesheet" href="src/styles/components/icon-button.css" />
+    <link rel="stylesheet" href="/src/styles/components/button.css" />
+    <link rel="stylesheet" href="/src/styles/components/link-button.css" />
+    <link rel="stylesheet" href="/src/styles/components/icon-button.css" />
 
-    <link rel="stylesheet" href="src/styles/components/header.css" />
-    <link rel="stylesheet" href="src/styles/components/form.css" />
-    <link rel="stylesheet" href="src/styles/components/table.css" />
-    <link rel="stylesheet" href="src/styles/components/footer.css" />
+    <link rel="stylesheet" href="/src/styles/components/header.css" />
+    <link rel="stylesheet" href="/src/styles/components/form.css" />
+    <link rel="stylesheet" href="/src/styles/components/table.css" />
+    <link rel="stylesheet" href="/src/styles/components/footer.css" />
+
+    <script type="module" src="/src/scripts/master.js"></script>
   </head>
   <body>
     <header>
       <h1 class="logo">Library Management System</h1>
       <a class="link-button" href="https://github.com/BijanProgrammer">
-        <img class="icon" src="assets/icons/github.svg" alt="" />
+        <img class="icon" src="/assets/icons/github.svg" alt="" />
         GitHub
       </a>
     </header>
@@ -45,7 +47,10 @@
           <label for="description">Description</label>
           <textarea id="description" name="description"></textarea>
         </div>
-        <button class="button" type="submit">Submit</button>
+        <div class="actions">
+          <button class="button" type="reset">Cancel</button>
+          <button class="button" type="submit">Submit</button>
+        </div>
       </form>
       <table>
         <thead>
@@ -65,251 +70,6 @@
             <td>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci
               alias beatae quas! A, ipsam, officiis.
-            </td>
-            <td>
-              <div class="actions">
-                <button class="icon-button edit">
-                  <img
-                    class="icon"
-                    src="/assets/icons/edit.svg"
-                    alt="Edit Icon"
-                  />
-                </button>
-                <button class="icon-button remove">
-                  <img
-                    class="icon"
-                    src="/assets/icons/remove.svg"
-                    alt="Remove Icon"
-                  />
-                </button>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <th class="row">2</th>
-            <td>Consectetur error ipsam sit.</td>
-            <td>Impedit quae</td>
-            <td>
-              Accusamus amet aspernatur culpa est, expedita laboriosam,
-              molestias nostrum porro quae quidem rerum totam ullam!
-            </td>
-            <td>
-              <div class="actions">
-                <button class="icon-button edit">
-                  <img
-                    class="icon"
-                    src="/assets/icons/edit.svg"
-                    alt="Edit Icon"
-                  />
-                </button>
-                <button class="icon-button remove">
-                  <img
-                    class="icon"
-                    src="/assets/icons/remove.svg"
-                    alt="Remove Icon"
-                  />
-                </button>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <th class="row">3</th>
-            <td>A eos nemo odio.</td>
-            <td>Minima odio</td>
-            <td>
-              Asperiores at consequuntur cum dignissimos fuga hic laudantium
-              reprehenderit sapiente, tempore temporibus. Animi, dolorem,
-              repudiandae.
-            </td>
-            <td>
-              <div class="actions">
-                <button class="icon-button edit">
-                  <img
-                    class="icon"
-                    src="/assets/icons/edit.svg"
-                    alt="Edit Icon"
-                  />
-                </button>
-                <button class="icon-button remove">
-                  <img
-                    class="icon"
-                    src="/assets/icons/remove.svg"
-                    alt="Remove Icon"
-                  />
-                </button>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <th class="row">4</th>
-            <td>Cumque mollitia nemo perspiciatis.</td>
-            <td>Aperiam sint</td>
-            <td>
-              Atque culpa dignissimos dolore doloremque ex, incidunt natus optio
-              praesentium quidem quos ratione reprehenderit sequi?
-            </td>
-            <td>
-              <div class="actions">
-                <button class="icon-button edit">
-                  <img
-                    class="icon"
-                    src="/assets/icons/edit.svg"
-                    alt="Edit Icon"
-                  />
-                </button>
-                <button class="icon-button remove">
-                  <img
-                    class="icon"
-                    src="/assets/icons/remove.svg"
-                    alt="Remove Icon"
-                  />
-                </button>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <th class="row">5</th>
-            <td>Iure libero repudiandae veritatis!</td>
-            <td>Dolorum voluptatum</td>
-            <td>
-              Debitis dolore est ex iusto, libero magni molestias, obcaecati
-              perferendis quod, sit suscipit vitae voluptatum.
-            </td>
-            <td>
-              <div class="actions">
-                <button class="icon-button edit">
-                  <img
-                    class="icon"
-                    src="/assets/icons/edit.svg"
-                    alt="Edit Icon"
-                  />
-                </button>
-                <button class="icon-button remove">
-                  <img
-                    class="icon"
-                    src="/assets/icons/remove.svg"
-                    alt="Remove Icon"
-                  />
-                </button>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <th class="row">6</th>
-            <td>Dolorem obcaecati officia reiciendis?</td>
-            <td>Excepturi ipsum</td>
-            <td>
-              Accusamus debitis eos et fuga ipsam iusto, molestiae nostrum
-              pariatur quaerat quis repellat tempore tenetur.
-            </td>
-            <td>
-              <div class="actions">
-                <button class="icon-button edit">
-                  <img
-                    class="icon"
-                    src="/assets/icons/edit.svg"
-                    alt="Edit Icon"
-                  />
-                </button>
-                <button class="icon-button remove">
-                  <img
-                    class="icon"
-                    src="/assets/icons/remove.svg"
-                    alt="Remove Icon"
-                  />
-                </button>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <th class="row">7</th>
-            <td>Magnam modi nostrum quaerat.</td>
-            <td>Adipisci provident</td>
-            <td>
-              Ab architecto assumenda dolor esse illo incidunt laudantium nisi,
-              quam sed sint. Eum, labore, voluptates.
-            </td>
-            <td>
-              <div class="actions">
-                <button class="icon-button edit">
-                  <img
-                    class="icon"
-                    src="/assets/icons/edit.svg"
-                    alt="Edit Icon"
-                  />
-                </button>
-                <button class="icon-button remove">
-                  <img
-                    class="icon"
-                    src="/assets/icons/remove.svg"
-                    alt="Remove Icon"
-                  />
-                </button>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <th class="row">8</th>
-            <td>Eveniet facilis temporibus voluptatum!</td>
-            <td>Non possimus</td>
-            <td>
-              Alias culpa esse ex iusto minima necessitatibus nihil non qui
-              quisquam! Iure laborum nam quae.
-            </td>
-            <td>
-              <div class="actions">
-                <button class="icon-button edit">
-                  <img
-                    class="icon"
-                    src="/assets/icons/edit.svg"
-                    alt="Edit Icon"
-                  />
-                </button>
-                <button class="icon-button remove">
-                  <img
-                    class="icon"
-                    src="/assets/icons/remove.svg"
-                    alt="Remove Icon"
-                  />
-                </button>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <th class="row">9</th>
-            <td>Aut corporis nemo voluptatum!</td>
-            <td>Labore quam</td>
-            <td>
-              Aliquam consequuntur dignissimos enim fugiat ipsam natus numquam
-              provident, ratione rerum voluptates! Cumque, exercitationem,
-              soluta.
-            </td>
-            <td>
-              <div class="actions">
-                <button class="icon-button edit">
-                  <img
-                    class="icon"
-                    src="/assets/icons/edit.svg"
-                    alt="Edit Icon"
-                  />
-                </button>
-                <button class="icon-button remove">
-                  <img
-                    class="icon"
-                    src="/assets/icons/remove.svg"
-                    alt="Remove Icon"
-                  />
-                </button>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <th class="row">10</th>
-            <td>Cupiditate deleniti esse obcaecati!</td>
-            <td>Inventore veritatis</td>
-            <td>
-              Aliquam asperiores atque, dolorum in necessitatibus nihil nostrum
-              officiis porro sed sint sit tempore veniam?
             </td>
             <td>
               <div class="actions">
