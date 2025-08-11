@@ -37,15 +37,26 @@
       <form>
         <div class="field">
           <label for="title">Title</label>
-          <input id="title" type="text" name="title" />
+          <input id="title" type="text" name="title" required />
         </div>
         <div class="field">
           <label for="author">Author</label>
-          <input id="author" type="text" name="author" />
+          <input
+            id="author"
+            type="text"
+            name="author"
+            autocomplete="name"
+            required
+          />
         </div>
         <div class="field">
           <label for="description">Description</label>
-          <textarea id="description" name="description"></textarea>
+          <textarea
+            id="description"
+            name="description"
+            required
+            minlength="3"
+          ></textarea>
         </div>
         <div class="actions">
           <button class="button" type="reset">Cancel</button>
