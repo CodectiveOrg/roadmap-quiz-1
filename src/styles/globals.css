@@ -5,4 +5,8 @@ html {
 body {
   background-color: var(--color-gray-1);
   color: var(--color-gray-10);
+
+  max-inline-size: 60rem;
+
+  margin-inline: auto;
 }
