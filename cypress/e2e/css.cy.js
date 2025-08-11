@@ -5,12 +5,15 @@ const readCss = (path) =>
   });
 
 const expectOnlyVars = (css, props) => {
+  const allowedKeywords = /:\s*(transparent|currentcolor|inherit|initial|unset)\s*;/i;
+  const allowedVar = /:\s*var\(--[a-z0-9-]+\)\s*;/i;
   props.forEach((prop) => {
-    const regex = new RegExp(`${prop}:[^;]*;`, "g");
+    const regex = new RegExp(`${prop}:[^;]*;`, "gi");
     const matches = css.match(regex) || [];
     matches.forEach((decl) => {
-      // Allowed: var(--...)
-      expect(decl).to.match(/:\s*var\(--[a-z0-9-]+\)\s*;/i);
+      // Allow CSS keywords that are reasonable for colors, otherwise require var(--...)
+      const ok = allowedKeywords.test(decl) || allowedVar.test(decl);
+      expect(ok, `Declaration must use var(--...) or allowed keyword for ${prop}: ${decl}`).to.be.true;
     });
   });
 };

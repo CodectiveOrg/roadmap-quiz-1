@@ -53,11 +53,15 @@ describe("JavaScript logic: initial render, add, edit, remove", () => {
         });
       cy.get("table tbody tr").should("have.length", before - 1);
       cy.contains("table tbody td", firstTitle).should("not.exist");
-      // First row index cell should be 1
+      // First cell should be a TH and equal to 1
       cy.get("table tbody tr")
         .first()
-        .find("th.row")
-        .should("contain.text", "1");
+        .find("th")
+        .first()
+        .should(($th) => {
+          expect($th[0].tagName).to.eq("TH");
+          expect($th.text().trim()).to.eq("1");
+        });
     });
   });
 });

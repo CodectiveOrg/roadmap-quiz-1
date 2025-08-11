@@ -27,7 +27,7 @@ const pathsMustExist = [
 ];
 
 describe("Filesystem and paths integrity", () => {
-  before(() => {
+  beforeEach(() => {
     cy.visit("/");
   });
 
@@ -39,7 +39,7 @@ describe("Filesystem and paths integrity", () => {
 
   it("references images with exact src and alt values in the DOM", () => {
     // GitHub icon
-    cy.get("header a.link-button .icon")
+    cy.get("header a.link-button", { timeout: 10000 }).find(".icon")
       .should("have.attr", "src", "/assets/icons/github.svg")
       .and("have.attr", "alt", "");
 

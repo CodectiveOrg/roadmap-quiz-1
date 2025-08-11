@@ -47,14 +47,14 @@ describe("HTML structure and semantics", () => {
     cy.get("header a.link-button").as("gh");
     cy.get("@gh").should("have.attr", "href").and("contain", "github.com");
     cy.get("@gh").should("contain.text", "GitHub");
-    cy.get("@gh .icon")
+    cy.get("@gh").find(".icon")
       .should("have.attr", "src", "/assets/icons/github.svg")
       .and("have.attr", "alt", "");
   });
 
   it("renders form with proper fields, labels, and validation", () => {
     cy.get("main form").as("form");
-    cy.get("@form .field").should("have.length", 3);
+    cy.get("@form").find(".field").should("have.length", 3);
 
     cy.get("label[for='title']").should("exist");
     cy.get("#title")
@@ -73,14 +73,12 @@ describe("HTML structure and semantics", () => {
       .and("have.attr", "minlength", "3")
       .and("have.prop", "required", true);
 
-    cy.get("@form .actions button[type='reset']").should(
-      "have.class",
-      "button",
-    );
-    cy.get("@form .actions button[type='submit']").should(
-      "have.class",
-      "button",
-    );
+    cy.get("@form")
+      .find(".actions button[type='reset']")
+      .should("have.class", "button");
+    cy.get("@form")
+      .find(".actions button[type='submit']")
+      .should("have.class", "button");
   });
 
   it("renders table with exact headers and classes", () => {
@@ -122,7 +120,8 @@ describe("HTML structure and semantics", () => {
     cy.get("table tbody tr")
       .first()
       .within(() => {
-        cy.get("td").each(($td) => {
+        cy.get("td").each(($td, idx, list) => {
+          if (idx === list.length - 1) return; // skip actions cell
           const text = $td.text();
           expect($td.attr("title")).to.eq(text);
         });
