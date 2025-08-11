@@ -6,6 +6,8 @@ form {
     "actions actions";
   gap: 1rem;
 
+  margin-block-end: 2rem;
+
   label {
     display: grid;
     gap: 0.3rem;
