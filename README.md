@@ -2,7 +2,7 @@
 
 Welcome! Your goal is to rebuild the UI and logic so that all automated tests pass locally and in CI. You’ll start from a minimal starter and must implement the full structure, styling, and logic exactly as specified below.
 
-Use this guide carefully. It tells you exactly what to build, where to put files, how to style things, and how to verify your solution.
+Use this guide carefully. It tells you exactly what to build, where to put files, how to style things, and how to verify your solution — without giving away the full code.
 
 ### What you get in the starter
 
@@ -25,9 +25,7 @@ Everything else you must create.
   - Files/folders and asset paths
 - The layout method (flex vs grid) doesn’t matter. Visual outcome, naming, and structure do.
 
-### Project structure you must create
-
-Use these exact paths and names. Tests rely on them.
+### Required project structure (must match exactly)
 
 ```
 assets/
@@ -65,249 +63,127 @@ src/
 
 Do not rename or move these files. Tests also request these resources over HTTP to ensure they exist and are linked.
 
-### HTML requirements
+### HTML requirements (what to build)
 
-Implement the following in `index.html`:
+- [ ] DOCTYPE present
+- [ ] `<html lang="en">`
+- [ ] `<meta charset="UTF-8">`
+- [ ] `<meta http-equiv="X-UA-Compatible" content="ie=edge">`
+- [ ] `<title>Library Management System</title>`
+- [ ] Link all stylesheets (exact hrefs):
+  - [ ] `/src/styles/globals.css`
+  - [ ] `/src/styles/shared/colors.css`
+  - [ ] `/src/styles/shared/shapes.css`
+  - [ ] `/src/styles/shared/fonts.css`
+  - [ ] `/src/styles/components/button.css`
+  - [ ] `/src/styles/components/link-button.css`
+  - [ ] `/src/styles/components/icon-button.css`
+  - [ ] `/src/styles/components/header.css`
+  - [ ] `/src/styles/components/form.css`
+  - [ ] `/src/styles/components/table.css`
+  - [ ] `/src/styles/components/footer.css`
+- [ ] Load JS with `<script type="module" src="/src/scripts/master.js"></script>`
+- [ ] Header includes:
+  - [ ] `<h1 class="logo">Library Management System</h1>`
+  - [ ] GitHub link: `<a class="link-button" href="https://github.com/...">`
+    - [ ] Contains `<img class="icon" src="/assets/icons/github.svg" alt="">`
+    - [ ] Contains the text `GitHub`
+- [ ] Form includes:
+  - [ ] Title: `<label for="title">` + `<input id="title" name="title" required>`
+  - [ ] Author: `<label for="author">` + `<input id="author" name="author" autocomplete="name" required>`
+  - [ ] Description: `<label for="description">` + `<textarea id="description" name="description" minlength="3" required></textarea>`
+  - [ ] Actions: `<div class="actions">` with
+    - [ ] `<button class="button" type="reset">Cancel</button>`
+    - [ ] `<button class="button" type="submit">Submit</button>`
+- [ ] Table includes:
+  - [ ] `<thead>` headers in order: `Row`, `Title`, `Author`, `Description`, `Actions`
+  - [ ] `<tbody>` is populated by JS
+  - [ ] For data cells, `title` attribute equals the cell text (actions cell excluded)
+- [ ] Footer contains the text `codective.ir`
 
-- Document setup
-  - DOCTYPE present
-  - `<html lang="en">`
-  - `<meta charset="UTF-8">` and `<meta http-equiv="X-UA-Compatible" content="ie=edge">`
-  - `<title>Library Management System</title>`
+### CSS requirements (design tokens and usage)
 
-- Load styles with exact hrefs (order doesn’t matter; names and paths do):
-  - `/src/styles/globals.css`
-  - `/src/styles/shared/colors.css`
-  - `/src/styles/shared/shapes.css`
-  - `/src/styles/shared/fonts.css`
-  - `/src/styles/components/button.css`
-  - `/src/styles/components/link-button.css`
-  - `/src/styles/components/icon-button.css`
-  - `/src/styles/components/header.css`
-  - `/src/styles/components/form.css`
-  - `/src/styles/components/table.css`
-  - `/src/styles/components/footer.css`
+Design tokens — define these in `:root` in `/src/styles/shared/colors.css` using HSL (HSL only):
 
-- Load JS
-  - `<script type="module" src="/src/scripts/master.js"></script>`
+| Variable name      | Value (HSL only)       |
+| ------------------ | ---------------------- |
+| `--color-gray-1`   | `hsl(0, 0%, 100%)`     |
+| `--color-gray-3`   | `hsl(0, 0%, 96%)`      |
+| `--color-gray-5`   | `hsl(0, 0%, 85%)`      |
+| `--color-gray-10`  | `hsl(0, 0%, 15%)`      |
+| `--color-blue-1`   | `hsl(199, 100%, 95%)`  |
+| `--color-blue-6`   | `hsl(209, 100%, 55%)`  |
+| `--color-blue-7`   | `hsl(211, 92%, 44%)`   |
+| `--color-red-6`    | `hsl(357, 91%, 55%)`   |
 
-- Header
-  - A `<header>` with `<h1 class="logo">Library Management System</h1>`
-  - A GitHub link: `<a class="link-button" href="...github.com...">`
-    - Contains an `<img class="icon" src="/assets/icons/github.svg" alt="">`
-    - Contains the text “GitHub”
+Shapes — in `/src/styles/shared/shapes.css`:
 
-- Main: Form + Table
-  - A `<form>` with:
-    - Title field: `<label for="title">Title</label>` + `<input id="title" name="title" required>`
-    - Author field: `<label for="author">Author</label>` + `<input id="author" name="author" autocomplete="name" required>`
-    - Description field: `<label for="description">Description</label>` + `<textarea id="description" name="description" minlength="3" required></textarea>`
-    - Actions: `<div class="actions">`
-      - `<button class="button" type="reset">Cancel</button>`
-      - `<button class="button" type="submit">Submit</button>`
-  - A `<table>` with:
-    - `<thead><tr>` containing these exact headers in order:
-      - Row, Title, Author, Description, Actions
-    - `<tbody>` is filled by JavaScript from `initialBooks`
+- [ ] `--border-radius: 0.5rem`
 
-- Footer
-  - `<footer>` contains “codective.ir” somewhere in the text
+Fonts — in `/src/styles/shared/fonts.css` (declare 4 @font-face rules that map to the assets below and set the global family):
 
-Note:
-- The table’s data cells should have a `title` attribute equal to their text content. This is handled by `master.js` when rendering.
+- [ ] `font-family: Codective` (normal 400) → `/assets/fonts/codective/regular.ttf`
+- [ ] `font-family: Codective` (italic 400) → `/assets/fonts/codective/italic.ttf`
+- [ ] `font-family: Codective` (normal 700) → `/assets/fonts/codective/bold.ttf`
+- [ ] `font-family: Codective` (italic 700) → `/assets/fonts/codective/bold-italic.ttf`
+- [ ] `html { font-family: Codective, sans-serif }`
 
-### CSS requirements
+Usage rules — in component styles (`globals.css`, `components/*.css`):
 
-- Design tokens in `:root` with exact names and HSL values in `/src/styles/shared/colors.css`:
+- [ ] For `color`, `background-color`, `border-color`, `outline-color` use only `var(--...)`
+- [ ] Do not use raw color values in declarations (no hex, rgb, hsl). Allowed keywords: `transparent`, `currentColor`, `inherit`, `initial`, `unset`
 
-```css
-:root {
-  --color-gray-1: hsl(0, 0%, 100%);
-  --color-gray-3: hsl(0, 0%, 96%);
-  --color-gray-5: hsl(0, 0%, 85%);
-  --color-gray-10: hsl(0, 0%, 15%);
+Computed visual outcomes (don’t care how you implement, only the result):
 
-  --color-blue-1: hsl(199, 100%, 95%);
-  --color-blue-6: hsl(209, 100%, 55%);
-  --color-blue-7: hsl(211, 92%, 44%);
+- [ ] Body background computes to `rgb(255, 255, 255)` and text color to `rgb(38, 38, 38)`
+- [ ] Header logo font-size is about `1.5rem` (≈24px) and font-weight is bold/700
+- [ ] Form actions (`.actions`) have a positive gap between children
+- [ ] Table header background computes to `rgb(245, 245, 245)`
 
-  --color-red-6: hsl(357, 91%, 55%);
-}
-```
+### JavaScript requirements (what to implement)
 
-- Shapes in `/src/styles/shared/shapes.css`:
+You are given `master.js` (renders UI, wires events) and `data.js` (provides `initialBooks`). You must implement the following modules with the exact names and behaviors. Do not paste large code from elsewhere — write these yourself.
 
-```css
-:root {
-  --border-radius: 0.5rem;
-}
-```
+`src/scripts/book.js` — required fields and behavior
 
-- Fonts in `/src/styles/shared/fonts.css`:
+- [ ] Class name: `Book`
+- [ ] Public fields: `title`, `author`, `description`
+- [ ] Constructor accepts `(title, author, description)` and assigns to fields
+- [ ] Instance method: `clone()` returns a new `Book` with the same field values
 
-```css
-@font-face {
-  font-family: Codective;
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("/assets/fonts/codective/regular.ttf");
-}
-@font-face {
-  font-family: Codective;
-  font-style: italic;
-  font-weight: 400;
-  font-display: swap;
-  src: url("/assets/fonts/codective/italic.ttf");
-}
-@font-face {
-  font-family: Codective;
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url("/assets/fonts/codective/bold.ttf");
-}
-@font-face {
-  font-family: Codective;
-  font-style: italic;
-  font-weight: 700;
-  font-display: swap;
-  src: url("/assets/fonts/codective/bold-italic.ttf");
-}
+`src/scripts/library-manager.js` — required fields and behavior
 
-html {
-  font-family: Codective, sans-serif;
-}
-```
+- [ ] Class name: `LibraryManager`
+- [ ] Private field: `#books`
+- [ ] Constructor accepts an array of `Book` and stores a cloned copy (not the same references)
+- [ ] Getter: `books` returns the internal array
+- [ ] Method: `addBook(book)` appends a book
+- [ ] Method: `editBook(row, book)` replaces the book at 1-based index `row`
+- [ ] Method: `removeBook(row)` removes the book at 1-based index `row`
+- [ ] Method: `clone()` returns a deep copy (new `LibraryManager` with cloned books)
 
-- Variable usage rule (critical):
-  - In component CSS (`button.css`, `link-button.css`, `icon-button.css`, `header.css`, `form.css`, `table.css`, `footer.css`, `globals.css`), any color-bearing property must use CSS variables:
-    - `color`, `background-color`, `border-color`, `outline-color`
-  - Do NOT use raw color values (hex, rgb, hsl) in component rules. Only values in `:root` are allowed to use HSL.
-  - Allowed keywords for these props: `transparent`, `currentColor`, `inherit`, `initial`, `unset`.
+End-to-end behaviors (what must work in the UI):
 
-- Visual outcomes to match:
-  - Body text and background must compute to:
-    - body background: `rgb(255, 255, 255)` (var(--color-gray-1))
-    - body color: `rgb(38, 38, 38)` (var(--color-gray-10))
-  - Table header background computes to light gray (`rgb(245, 245, 245)`, var(--color-gray-3))
-  - Buttons should look clickable; hover should shift to a different blue (use `var(--color-blue-6)` and `var(--color-blue-7)`)
-  - Layout specifics (flex vs grid) are not enforced; spacing, padding, font sizing, and alignment should match the screenshot visually.
-
-Tip:
-- Keep a clean separation: globals in `globals.css`, tokens in `shared/*`, component-specific styles in `components/*`.
-
-### JavaScript requirements
-
-- You are given:
-  - `src/scripts/master.js` — wires up the UI and handles DOM rendering and events
-  - `src/scripts/data.js` — exports `initialBooks` as an array of Book instances
-- You must implement:
-
-`src/scripts/book.js`
-```js
-export class Book {
-  title;
-  author;
-  description;
-
-  constructor(title, author, description) {
-    this.title = title;
-    this.author = author;
-    this.description = description;
-  }
-
-  clone() {
-    return new Book(this.title, this.author, this.description);
-  }
-}
-```
-
-`src/scripts/library-manager.js`
-```js
-export class LibraryManager {
-  #books;
-
-  constructor(books) {
-    this.#books = books.map((book) => book.clone());
-  }
-
-  get books() {
-    return this.#books;
-  }
-
-  addBook(book) {
-    this.#books.push(book);
-  }
-
-  editBook(row, book) {
-    this.#books[row - 1] = book;
-  }
-
-  removeBook(row) {
-    this.#books.splice(row - 1, 1);
-  }
-
-  clone() {
-    return new LibraryManager(this.#books);
-  }
-}
-```
-
-- Behavior that must work end-to-end:
-  - On load: table renders the initial books (at least 3 rows) from `initialBooks`
-  - Add: submitting the form appends a new row
-  - Edit: clicking the first icon-button in a row (Edit) loads values into the form and submitting saves them back into the table
-  - Remove: clicking the second icon-button removes that row and reindexes the Row column starting at 1
-  - The action buttons must have the correct icons and alts:
-    - Edit: src `/assets/icons/edit.svg`, alt `Edit Icon`
-    - Remove: src `/assets/icons/remove.svg`, alt `Remove Icon`
+- [ ] On load, the table shows at least the 3 books from `initialBooks`
+- [ ] Submitting the form adds a new row with the provided title/author/description
+- [ ] Clicking a row’s first action (Edit) loads that row into the form; submitting saves the changes back to the table
+- [ ] Clicking a row’s second action (Remove) deletes the row and the first column reindexes starting at `1`
+- [ ] Row actions use exact icons and `alt`:
+  - [ ] Edit: `src="/assets/icons/edit.svg"`, `alt="Edit Icon"`
+  - [ ] Remove: `src="/assets/icons/remove.svg"`, `alt="Remove Icon"`
 
 ### How to run and test locally
 
-- Install dependencies:
-  - `npm install`
-- Start tests (headless):
-  - `npm test`
-- Open Cypress (optional):
-  - `npx cypress open`
-- The tests will:
-  - Serve your app locally
-  - Run end-to-end tests in Electron headless
+- [ ] Install dependencies: `npm install`
+- [ ] Run tests (headless): `npm test`
+- [ ] Optional: open the runner UI: `npx cypress open`
+
+The tests will start a local server and run end-to-end checks automatically.
 
 ### CI on GitHub (automatic)
 
 - When you open a pull request, GitHub Actions run the same Cypress tests automatically.
-- Make sure your branch includes all required files and exact paths so CI can fetch them.
-
-### Passing checklist ✅
-
-- HTML
-  - DOCTYPE + `lang="en"`
-  - Title exactly “Library Management System”
-  - All stylesheet links with exact hrefs (see list above)
-  - Script: `<script type="module" src="/src/scripts/master.js">`
-  - Header with `.logo`, GitHub link with icon and text “GitHub”
-  - Form fields with labels, names, validation attributes, and actions
-  - Table headers: Row, Title, Author, Description, Actions (in this order)
-  - Footer contains “codective.ir”
-
-- CSS
-  - Colors declared in `:root` via HSL with exact variable names (no other formats for tokens)
-  - Border radius variable present: `--border-radius: 0.5rem`
-  - Font-face sources point to `assets/fonts/codective/...`
-  - Global font-family: `Codective, sans-serif`
-  - In components, use only `var(...)` for color/outline/border colors; no hard-coded colors
-  - Visuals match: body colors, table head bg, button hover, spacing
-
-- JS behavior
-  - `Book` and `LibraryManager` implemented exactly as above
-  - Add/Edit/Remove work; indices reflow to start at 1
-  - Image src and alt texts match exactly for action buttons
-
-- Files and structure
-  - All files exist at exact paths
-  - Do not rename or move files/folders
+- Ensure your branch includes all required files and exact paths so CI can fetch them.
 
 ### Troubleshooting 🧩
 
@@ -317,7 +193,7 @@ export class LibraryManager {
 - Missing asset/path test
   - Confirm all required files exist and are linked in `<head>`
 - Header icon or alt failure
-  - Ensure header anchor contains `<img class="icon" src="/assets/icons/github.svg" alt="">` and the text “GitHub”
+  - Ensure header anchor contains `<img class="icon" src="/assets/icons/github.svg" alt="">` and the text `GitHub`
 - Row index test fails after removing
   - Ensure `removeBook(row)` removes correctly and table re-renders
 
