@@ -24,11 +24,34 @@
     <script src="/src/scripts/master.js" type="module"></script>
   </head>
   <body>
-    <!-- header -->
+    <h1 class="logo">Library Management System</h1>
+    <a href="https://github.com/SinaMAmini" class="link-button">
+      <img src="/assets/icons/github.svg" alt="" class="icon">
+      GitHub
+    </a>
     <main>
-      <!-- form -->
+      <form>
+        <label for="title"></label>
+        <input type="text" id="title" name="title" required>
+        <label for="author"></label>
+        <input type="text" id="author" name="author" autocomplete="name" required>
+        <label for="description"></label>
+        <input type="text" id="description" name="description" minlength="3" required>
+        <div class="action">
+          <button class="button">cancel</button>
+          <button class="button">submit</button>
+        </div>
+      </form>
       <table>
-        <!-- thead -->
+        <thead>
+          <tr>
+            <th>Row</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Description</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
         <tbody>
           <!-- example start -->
           <tr>
@@ -50,6 +73,6 @@
         </tbody>
       </table>
     </main>
-    <!-- footer -->
+    <footer>codective.ir</footer>
   </body>
 </html>
