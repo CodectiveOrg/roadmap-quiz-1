@@ -1,42 +1,95 @@
-<!doctype html>
-<html>
-  <head>
-    <meta
-      name="viewport"
-      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
-    />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <!-- title -->
-    <!-- css links -->
-    <!-- javascript link -->
-  </head>
-  <body>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta
+                name="viewport"
+                content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+        />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+        <!-- title -->
+        <title>Library Management System</title>
+        <!-- css links -->
+        <link rel="stylesheet" href="/src/styles/globals.css">
+        <link rel="stylesheet" href="/src/styles/shared/colors.css">
+        <link rel="stylesheet" href="/src/styles/shared/fonts.css">
+        <link rel="stylesheet" href="/src/styles/shared/shapes.css">
+        <link rel="stylesheet" href="/src/styles/shared/transition.css">
+        <link rel="stylesheet" href="/src/styles/components/button.css">
+        <link rel="stylesheet" href="/src/styles/components/footer.css">
+        <link rel="stylesheet" href="/src/styles/components/form.css">
+        <link rel="stylesheet" href="/src/styles/components/header.css">
+        <link rel="stylesheet" href="/src/styles/components/icon-button.css">
+        <link rel="stylesheet" href="/src/styles/components/link-button.css">
+        <link rel="stylesheet" href="/src/styles/components/table.css">
+        <!-- javascript link -->
+        <script src="/src/scripts/master.js" type="module"></script>
+    </head>
+    <body>
     <!-- header -->
-    <main>
-      <!-- form -->
-      <table>
-        <!-- thead -->
-        <tbody>
-          <!-- example start -->
-          <tr>
-            <th>1</th>
-            <td>Lorem ipsum dolor sit.</td>
-            <td>Lorem ipsum</td>
-            <td>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci
-              alias beatae quas! A, ipsam, officiis.
-            </td>
-            <td>
-              <div class="actions">
-                <!-- edit button -->
-                <!-- remove button -->
-              </div>
-            </td>
-          </tr>
-          <!-- example end -->
-        </tbody>
-      </table>
-    </main>
-    <!-- footer -->
-  </body>
+        <header>
+            <h1 class="logo">Library Management System</h1>
+            <a href="https://github.com/AlirezaHassaniEghtedar" class="link-button">
+                <img src="/assets/icons/github.svg" class="icon" alt="">
+                GitHub
+            </a>
+        </header>
+        <main>
+            <!-- form -->
+            <form action="">
+                <label for="title">
+                    Title
+                    <input type="text" id="title" name="title" required>
+                </label>
+
+                <label for="author">
+                    Author
+                    <input type="text" id="author" name="title" autocomplete="name" required>
+                </label>
+
+                <label for="description">
+                    Description
+                    <textarea name="description" id="description" minlength="3" required></textarea>
+                </label>
+
+                <div class="actions">
+                    <button class="button" type="reset">Cancel</button>
+                    <button class="button" type="submit">Submit</button>
+                </div>
+            </form>
+            <table>
+                <!-- thead -->
+                <thead>
+                <tr>
+                  <th>Row</th>
+                  <th>Title</th>
+                  <th>Author</th>
+                  <th>Description</th>
+                  <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                <!-- example start -->
+                <tr>
+                    <th>1</th>
+                    <td>Lorem ipsum dolor sit.</td>
+                    <td>Lorem ipsum</td>
+                    <td>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci
+                        alias beatae quas! A, ipsam, officiis.
+                    </td>
+                    <td>
+                        <div class="actions">
+                            <!-- edit button -->
+                            <!-- remove button -->
+                        </div>
+                    </td>
+                </tr>
+                <!-- example end -->
+                </tbody>
+            </table>
+        </main>
+        <!-- footer -->
+        <footer>Copyright&copy;2025 codective.ir</footer>
+    </body>
 </html>
