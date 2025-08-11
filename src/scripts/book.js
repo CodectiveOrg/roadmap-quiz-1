@@ -5,11 +5,11 @@ class Book {
     this.description = description;
   }
 
-  clone(title, author, description) {
+  clone() {
     return structuredClone({
-      title,
-      author,
-      description,
+      title: this.title,
+      author: this.author,
+      description: this.description,
     });
   }
 }

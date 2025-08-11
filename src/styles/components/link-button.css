@@ -1,0 +1,11 @@
+.link-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.25rem;
+
+  img {
+    inline-size: 1.5rem;
+    block-size: 1.5rem;
+  }
+}

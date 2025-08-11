@@ -2,8 +2,8 @@ class LibraryManager {
   #books = [];
 
   constructor(books) {
-    for (const book in books) {
-      this.#books.push(clone(book));
+    for (const book of books) {
+      this.#books.push(this.clone(book));
     }
   }
 
@@ -17,7 +17,7 @@ class LibraryManager {
 
   editBook(row, book) {
     const index = row - 1;
-    this.#books[index] = structuredClone(book);
+    this.#books[index] = this.clone(book);
   }
 
   removeBook(row) {

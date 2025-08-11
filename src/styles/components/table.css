@@ -27,17 +27,21 @@ table {
   }
 
   tbody {
-    th,
-    td {
-      padding: 0.5rem;
+    tr {
+      border-block-end: 2px solid var(--color-gray-3);
 
-      text-align: center;
-    }
+      th,
+      td {
+        padding: 0.5rem;
 
-    .actions {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+        text-align: center;
+      }
+
+      .actions {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
     }
   }
 }

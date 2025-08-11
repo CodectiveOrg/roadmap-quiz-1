@@ -3,26 +3,37 @@ form {
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
 
-  input,
-  textarea {
-    font-family: Codective, sans-serif;
-    
-    padding: 0.5rem 0.25rem;
-
-    border-radius: var(--border-radius);
-  }
-
   label {
     font-weight: 600;
   }
 
-  > div:nth-child(3) {
-    grid-area: 2 / 1 / span 2 / span 2;
-  }
-
-  > div:not(:last-child) {
+  .field {
     display: grid;
-    gap: 0.5rem;
+
+    textarea {
+      border-width: 2px;
+
+      resize: none;
+    }
+
+    input,
+    textarea {
+      padding: 0.5rem;
+
+      border-radius: var(--border-radius);
+
+      &:valid {
+        border-color: var(--color-gray-10);
+      }
+
+      &:invalid {
+        border-color: var(--color-red-6);
+      }
+    }
+
+    &:nth-child(3) {
+      grid-area: 2 / 1 / span 1 / span 2;
+    }
   }
 
   .actions {
@@ -31,5 +42,19 @@ form {
     justify-content: flex-end;
     gap: 1rem;
     grid-area: 4 / 2 / span 2 / span 1;
+
+    button {
+      font-weight: 500;
+    }
+
+    button[type="submit"] {
+      background-color: var(--color-blue-6);
+
+      color: var(--color-gray-1);
+    }
+
+    button[type="reset"] {
+      background-color: transparent;
+    }
   }
 }

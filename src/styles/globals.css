@@ -40,7 +40,11 @@ body {
 
     button {
       cursor: pointer;
+    }
 
+    input,
+    textarea,
+    button {
       font-family: Codective, sans-serif;
     }
   }
