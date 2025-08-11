@@ -1,6 +1,12 @@
 .icon-button {
   background-color: transparent;
 
-  inline-size: 1rem;
-  block-size: 1rem;
+  border: none;
+
+  outline: none;
+
+  img {
+    inline-size: 1rem;
+    block-size: 1rem;
+  }
 }
