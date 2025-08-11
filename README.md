@@ -22,6 +22,8 @@ Your goal is to build the UI and logic so that all automated tests pass locally 
 Use this guide carefully.
 It tells you exactly what to build, where to put files, how to style things, and how to verify your solution.
 
+![A Screenshot of the Final Result](./goal.png)
+
 ## What You Get in the Initial Project
 
 - `index.html` with a minimal skeleton and one example table row
@@ -183,11 +185,14 @@ define these in `fonts.css`:
 Declare 4 `@font-face` rules that map to the assets above.  
 Use `Codective` as `font-family` for all of them.
 
+Also set the global font on the root: add a rule so `html` uses `font-family: Codective, sans-serif`.
+
 ### Usage rules
 
 In component styles (`globals.css`, `components/*.css`):
 
 - [ ] For `color`, `background-color`, `border-color`, `outline-color` use only `var(--...)`
+- [ ] Body `max-inline-size` is `60rem` and it has non-zero horizontal padding
 - [ ] Do not use raw color values in declarations (no hex, rgb, hsl)
 - [ ] Allowed keywords: `transparent`, `currentColor`, `inherit`, `initial`, `unset`
 
