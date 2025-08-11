@@ -1,0 +1,24 @@
+table {
+    inline-size: 100%;
+
+    margin-block: 1rem;
+
+    border-collapse: collapse;
+
+    thead {
+        tr {
+        border-radius: var(--border-radius);
+
+            th {
+            background-color: var(--color-gray-3);
+
+                text-align: left;
+            }
+
+            th ,
+            td {
+                padding: 1rem;
+            }
+        }
+    }
+}

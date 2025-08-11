@@ -1,0 +1,25 @@
+.button {
+    border: none;
+    background-color: transparent;
+
+    padding: 0.5rem 1rem;
+
+    border-radius: var(--border-radius);
+
+    cursor: pointer;
+
+    transition: var(--transition);
+
+    &:hover {
+        background-color: var(--color-gray-3);
+    }
+
+    &[type="submit"] {
+        background-color: var(--color-blue-6);
+        color: var(--color-gray-1);
+
+        &:hover {
+            background-color: var(--color-blue-7);
+        }
+    }
+}
