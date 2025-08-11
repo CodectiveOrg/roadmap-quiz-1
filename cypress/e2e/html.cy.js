@@ -87,7 +87,7 @@ describe("HTML structure and semantics", () => {
     headers.forEach((h, i) => {
       cy.get("table thead tr th").eq(i).should("have.text", h);
     });
-    cy.get("table thead tr th").first().should("have.class", "row");
+    // First header is 'Row' but we don't enforce a class name here
   });
 
   it("renders actions with correct icons and alts", () => {

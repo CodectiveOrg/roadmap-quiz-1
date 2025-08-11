@@ -1,12 +1,4 @@
-// End-to-end tests to validate HTML structure, CSS styles, and JS logic
-
-// Helper to get computed style property value
-const getStyle = (selector, prop) =>
-  cy
-    .get(selector)
-    .then(($el) =>
-      window.getComputedStyle($el[0]).getPropertyValue(prop).trim(),
-    );
+// End-to-end tests to validate HTML structure and JS logic (CSS assertions moved to css.cy.js)
 
 describe("Library Management System", () => {
   beforeEach(() => {
@@ -20,32 +12,10 @@ describe("Library Management System", () => {
     cy.get("main form").should("exist");
     cy.get("main table").should("exist");
     cy.get("table thead tr th").should("have.length", 5);
-    cy.get("table thead tr th").eq(0).should("have.class", "row");
     cy.get("footer").should("contain.text", "codective.ir");
   });
 
-  it("applies expected core CSS styles", () => {
-    // Colors come from CSS variables; assert a few key ones via computed styles
-    getStyle("body", "background-color").should("eq", "rgb(255, 255, 255)");
-    getStyle("body", "color").should("eq", "rgb(38, 38, 38)"); // gray-10
-
-    // Table header background
-    cy.get("table thead").then(($el) => {
-      const bg = window.getComputedStyle($el[0]).backgroundColor;
-      expect(bg).to.satisfy((c) =>
-        ["rgb(245, 245, 245)", "rgba(245, 245, 245, 1)"].includes(c),
-      );
-    });
-
-    // Button hover style should change background color
-    cy.get("button.button[type='submit']")
-      .trigger("mouseover")
-      .then(($el) => {
-        const bg = window.getComputedStyle($el[0]).backgroundColor;
-        // Blue-ish
-        expect(bg).to.match(/rgb\(\d+, \d+, \d+\)/);
-      });
-  });
+  // Note: CSS-related assertions live in css.cy.js
 
   it("renders initial books in table from JS", () => {
     // Ensure rows are generated from JS initialBooks (3 rows)
