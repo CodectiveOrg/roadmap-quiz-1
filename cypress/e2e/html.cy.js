@@ -12,9 +12,6 @@ describe("HTML structure and semantics", () => {
 
   it("has required head tags and stylesheets loaded", () => {
     cy.get("head meta[charset='UTF-8']").should("exist");
-    cy.get("head meta[http-equiv='X-UA-Compatible'][content='ie=edge']").should(
-      "exist",
-    );
     cy.get("title").should("have.text", "Library Management System");
 
     // Stylesheets

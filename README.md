@@ -117,7 +117,6 @@ Do not convert `rem` to `px` and do not use `font-size: 62.5%` trick.
 - [ ] DOCTYPE present
 - [ ] `html` with correct `lang`
 - [ ] `meta` with `charset` of `UTF-8`
-- [ ] `meta` with `http-equiv` of `X-UA-Compatible` and `content` of `ie=edge`
 - [ ] `title` with `Library Management System` as text
 - [ ] Link all stylesheets separately
 - [ ] Link only `master.js` with `type` of `module`
