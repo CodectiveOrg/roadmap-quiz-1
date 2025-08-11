@@ -33,10 +33,6 @@ table {
 
           font-size: 0.75rem;
         }
-
-        &.row {
-          text-align: center;
-        }
       }
 
       &:not(:last-child) {
