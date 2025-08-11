@@ -34,7 +34,35 @@
       </a>
     </header>
     <main>
-      <!-- form -->
+      <form>
+        <label for="title">
+          Title
+          <input type="text" id="title" name="title" required />
+        </label>
+        <label for="author">
+          Author
+          <input
+            type="text"
+            id="author"
+            name="author"
+            required
+            autocomplete="name"
+          />
+        </label>
+        <label for="description">
+          Description
+          <textarea
+            id="description"
+            name="description"
+            required
+            minlength="3"
+          ></textarea>
+        </label>
+        <div class="actions">
+          <button class="button" type="reset">Cancel</button>
+          <button class="button" type="submit">Submit</button>
+        </div>
+      </form>
       <table>
         <!-- thead -->
         <tbody>

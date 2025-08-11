@@ -3,6 +3,8 @@ header {
   align-items: center;
   justify-content: space-between;
 
+  margin-block-end: 2rem;
+
   .logo {
     font-size: 1.5rem;
     font-weight: 700;
