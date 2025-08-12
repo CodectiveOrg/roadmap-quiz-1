@@ -1,0 +1,56 @@
+form {
+  display: grid;
+  grid-template-areas:
+    "title author"
+    "description description"
+    "actions actions";
+  gap: 1rem;
+
+  label {
+    display: grid;
+    gap: 0.3rem;
+
+    input,
+    textarea {
+      block-size: 2rem;
+
+      padding-inline: 0.75rem;
+
+      outline: none;
+      border: 1px solid var(--color-gray-5);
+      border-radius: var(--border-radius);
+    }
+
+    input:user-invalid,
+    textarea:user-invalid {
+      border-color: var(--color-red-6);
+    }
+
+    textarea {
+      min-block-size: 4rem;
+
+      padding-block: 0.5rem;
+    }
+  }
+
+  label[for="title"] {
+    grid-area: title;
+  }
+
+  label[for="author"] {
+    grid-area: author;
+  }
+
+  label[for="description"] {
+    grid-area: description;
+  }
+
+  .actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1rem;
+
+    grid-area: actions;
+  }
+}

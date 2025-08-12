@@ -1,42 +1,98 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta
       name="viewport"
       content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
     />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <!-- title -->
-    <!-- css links -->
-    <!-- javascript link -->
+    <meta charset="UTF-8" />
+    <title>Library Management System</title>
+    <link href="/src/styles/shared/colors.css" rel="stylesheet" />
+    <link href="/src/styles/shared/fonts.css" rel="stylesheet" />
+    <link href="/src/styles/shared/shapes.css" rel="stylesheet" />
+    <link href="/src/styles/globals.css" rel="stylesheet" />
+    <link href="/src/styles/components/button.css" rel="stylesheet" />
+    <link href="/src/styles/components/footer.css" rel="stylesheet" />
+    <link href="/src/styles/components/form.css" rel="stylesheet" />
+    <link href="/src/styles/components/header.css" rel="stylesheet" />
+    <link href="/src/styles/components/icon-button.css" rel="stylesheet" />
+    <link href="/src/styles/components/link-button.css" rel="stylesheet" />
+    <link href="/src/styles/components/table.css" rel="stylesheet" />
+    <script src="/src/scripts/master.js" type="module"></script>
   </head>
   <body>
-    <!-- header -->
+    <header>
+      <h1 class="logo">Library Management System</h1>
+      <a
+        class="link-button"
+        href="https://github.com/mowhammadali"
+        target="_blank"
+      >
+        <img class="icon" src="/assets/icons/github.svg" alt="" />
+        GitHub
+      </a>
+    </header>
     <main>
-      <!-- form -->
+      <form>
+        <label class="field" for="title">
+          Title
+          <input type="text" id="title" name="title" required />
+        </label>
+        <label class="field" for="author">
+          Author
+          <input
+            type="text"
+            id="author"
+            name="author"
+            required
+            autocomplete="name"
+          />
+        </label>
+        <label class="field" for="description">
+          Description
+          <textarea
+            id="description"
+            name="description"
+            required
+            minlength="3"
+          ></textarea>
+        </label>
+        <div class="actions">
+          <button class="button" type="reset">Cancel</button>
+          <button class="button" type="submit">Submit</button>
+        </div>
+      </form>
       <table>
-        <!-- thead -->
+        <thead>
+          <tr>
+            <th>Row</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Description</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
         <tbody>
-          <!-- example start -->
           <tr>
             <th>1</th>
-            <td>Lorem ipsum dolor sit.</td>
-            <td>Lorem ipsum</td>
-            <td>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci
-              alias beatae quas! A, ipsam, officiis.
-            </td>
+            <td title="title">title</td>
+            <td title="author">author</td>
+            <td title="description">description</td>
             <td>
               <div class="actions">
-                <!-- edit button -->
-                <!-- remove button -->
+                <button>
+                  <img src="/assets/icons/edit.svg" alt=""/>
+                </button>
+                <button>
+                  <img src="/assets/icons/remove.svg" alt=""/>
+                </button>
               </div>
             </td>
           </tr>
-          <!-- example end -->
         </tbody>
       </table>
     </main>
-    <!-- footer -->
+    <footer>Copyright © 2015 codective.ir</footer>
   </body>
 </html>
