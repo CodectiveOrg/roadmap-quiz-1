@@ -1,18 +1,8 @@
-form.fields {
+form {
   display: grid;
   grid-template-areas: "field field" "description description" "actions actions";
   gap: 1rem;
 
-  div.title {
-    grid-area: field;
-  }
-
-  div.authour {
-    grid-area: field;
-  }
-  div.description {
-    grid-area: description;
-  }
   div.actions {
     grid-area: actions;
   }

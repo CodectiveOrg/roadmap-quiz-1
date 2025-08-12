@@ -2,8 +2,8 @@
   box-sizing: border-box;
 }
 
-:root {
-  font-family: "Codective", sans-serif;
+html {
+  font-family: Codective, sans-serif;
 }
 
 body {
