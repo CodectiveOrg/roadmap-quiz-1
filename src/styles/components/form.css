@@ -27,6 +27,10 @@ form {
       &:focus {
         border-color: var(--color-blue-6);
       }
+
+      &:user-invalid {
+        border-color: var(--color-red-6);
+      }
     }
 
     textarea {
