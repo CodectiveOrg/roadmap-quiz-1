@@ -1,0 +1,51 @@
+*,
+::before,
+::after {
+  padding: 0;
+
+  margin: 0;
+  
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Codective, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-gray-10);
+}
+
+body {
+  max-inline-size: 60rem;
+
+  block-size: 100dvh;
+
+  padding-inline: 0.5rem;
+
+  background-color: var(--color-gray-1);
+
+  color: var(--color-gray-10);
+
+  margin-inline: auto;
+
+  display: grid;
+  grid-template-rows: 1fr auto 1fr;
+  gap: 0.5rem;
+
+  main {
+    display: grid;
+    gap: 1rem;
+
+    button {
+      cursor: pointer;
+    }
+
+    input,
+    textarea,
+    button {
+      font-family: Codective, sans-serif;
+    }
+  }
+}

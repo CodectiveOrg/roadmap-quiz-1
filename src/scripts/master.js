@@ -114,7 +114,7 @@ class Master {
 
         this.#libraryManager.removeBook(index + 1);
         this.#render();
-      },
+      }
     );
 
     actions.append(editAction);

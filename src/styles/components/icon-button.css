@@ -1,0 +1,12 @@
+.icon-button {
+  background-color: transparent;
+
+  border: none;
+
+  outline: none;
+
+  img {
+    inline-size: 1rem;
+    block-size: 1rem;
+  }
+}
