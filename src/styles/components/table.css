@@ -3,7 +3,8 @@ table {
 
   margin-block: 1rem;
 
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0;
 
   thead {
     background-color: var(--color-gray-3);
@@ -29,18 +30,35 @@ table {
 
   tbody {
     tr {
-      th {
+      th,
+      td {
+        padding-block: 0.5rem;
       }
       td {
         .actions {
           display: flex;
           gap: 0.5rem;
           align-items: center;
+          justify-content: center;
+        }
+
+        &:nth-child(2),
+        &:nth-child(3),
+        &:nth-child(4) {
+          overflow: hidden;
+
+          max-inline-size: 10ch;
+
+          text-overflow: ellipsis;
+          white-space: nowrap;
         }
       }
 
       &:not(:last-child) {
-        border-bottom: 1px solid var(--color-gray-5);
+        th,
+        td {
+          border-bottom: 1px solid var(--color-gray-5);
+        }
       }
     }
   }
