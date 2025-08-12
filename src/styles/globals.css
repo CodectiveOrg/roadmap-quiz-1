@@ -3,6 +3,7 @@ html {
 
   body {
     max-inline-size: 60rem;
+    padding-inline: 1rem;
 
     background-color: var(--color-gray-1);
     color: var(--color-gray-10);
