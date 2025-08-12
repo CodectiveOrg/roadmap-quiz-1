@@ -1,5 +1,5 @@
 {
-  "name": "roadmap-quiz-1",
+  "name": "roadmap-challenge-library",
   "version": "1.0.0",
   "scripts": {
     "start": "live-server --port=3000",
