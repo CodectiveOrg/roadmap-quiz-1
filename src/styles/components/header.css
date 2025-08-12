@@ -1,0 +1,33 @@
+header {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+
+  padding-block: 2rem;
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  .link-button {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+
+    padding: 0.5rem;
+    border-radius: var(--border-radius);
+
+    transition: var(--transition);
+
+    &:hover {
+      background-color: var(--color-gray-3);
+    }
+
+    img {
+      block-size: 1.5rem;
+
+      aspect-ratio: 1 / 1;
+    }
+  }
+}

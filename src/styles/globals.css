@@ -1,0 +1,47 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: Codective, sans-serif;
+}
+
+input,
+label,
+select,
+textarea,
+button,
+fieldset,
+legend,
+datalist,
+output,
+option,
+optgroup {
+  font-family: inherit;
+}
+
+a {
+  text-decoration: none;
+
+  color: unset;
+}
+
+body {
+  max-inline-size: 60rem;
+  margin-inline: auto;
+  padding-inline: 2rem;
+
+  caret-color: transparent;
+
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-block-size: 100vb;
+  min-block-size: 100dvb;
+
+  background-color: var(--color-gray-1);
+  color: var(--color-gray-10);
+}
