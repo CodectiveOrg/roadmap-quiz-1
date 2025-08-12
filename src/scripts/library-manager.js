@@ -1,5 +1,5 @@
 export class LibraryManager {
-  #books;
+  #books = [];
 
   constructor(books) {
     books.map((book) => this.#books.add(book));
@@ -9,11 +9,19 @@ export class LibraryManager {
     return this.#books;
   }
 
-  addBook(book) {}
+  addBook(book) {
+    this.#books.add(book);
+  }
 
-  editBook(row, book) {}
+  editBook(row, book) {
+    this.#books[row - 1] = book;
+  }
 
-  removeBook(row) {}
+  removeBook(row) {
+    this.#books.delete(row - 1);
+  }
 
-  clone() {}
+  clone() {
+    return new LibraryManager(this.#books);
+  }
 }
