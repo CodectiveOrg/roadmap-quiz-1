@@ -1,0 +1,21 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: "Codective", sans-serif;
+}
+
+body {
+  max-inline-size: 60rem;
+  background-color: var(--color-gray-1);
+  color: var(--color-gray-10);
+  margin: 0 auto;
+  padding-block-start: 4rem;
+
+  main {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+}

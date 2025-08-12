@@ -1,0 +1,19 @@
+td div.actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px;
+
+  button.icon-button {
+    inline-size: 1.5rem;
+    block-size: 1.5rem;
+    color: var(--color-gray-5);
+    background-color: var(--color-gray-1);
+
+    img {
+      inline-size: 1rem;
+      block-size: 1rem;
+      cursor: pointer;
+    }
+  }
+}
