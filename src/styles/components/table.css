@@ -37,24 +37,6 @@ table {
           gap: 0.5rem;
           align-items: center;
         }
-
-        /*&:nth-child(2) ,*/
-        /*&:nth-child(3) ,*/
-        /*&:nth-child(4) {*/
-        /*    overflow: hidden;*/
-        /*    display: -webkit-box;*/
-        /*    -webkit-box-orient: vertical;*/
-        /*    -webkit-line-clamp: 1;*/
-        /*}*/
-
-        /*&:nth-child(2) ,*/
-        /*&:nth-child(3) ,*/
-        /*&:nth-child(4) {*/
-        /*    overflow: hidden;*/
-        /*    white-space: nowrap;*/
-        /*    text-overflow: ellipsis;*/
-        /*    inline-size: 100%;*/
-        /*}*/
       }
 
       &:not(:last-child) {
