@@ -11,21 +11,26 @@ form {
     display: grid;
 
     textarea {
-      border-width: 2px;
-
-      resize: none;
+      resize: vertical;
     }
 
     input,
     textarea {
       padding: 0.5rem;
 
+      border-width: 2px;
+
       border-radius: var(--border-radius);
 
-      border-color: var(--color-gray-10);
+      border: 2px solid var(--color-gray-10);
+
+      &:hover,
+      &:focus {
+        border-color: var(--color-blue-7);
+      }
 
       &:user-invalid {
-        border-color: var(--color-red-6);
+        border: 2px solid var(--color-red-6);
       }
     }
 

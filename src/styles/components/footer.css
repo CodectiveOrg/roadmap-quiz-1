@@ -1,4 +1,6 @@
 footer {
   display: grid;
   place-content: center;
+
+  font-weight: 600;
 }
