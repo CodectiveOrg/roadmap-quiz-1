@@ -1,0 +1,19 @@
+header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.logo {
+  gap: 1rem;
+}
+
+.link-button {
+  text-decoration: none;
+  color: hsl(0, 0%, 15%);
+}
+
+.icon {
+  inline-size: 1.5rem;
+  margin-block-start: 1rem;
+  padding-inline-end: 0.5rem;
+}
