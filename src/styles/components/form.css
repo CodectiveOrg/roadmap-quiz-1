@@ -6,8 +6,6 @@ form {
     "actions actions";
   gap: 1rem;
 
-  /* margin-block-end: 2rem; */
-
   label {
     display: grid;
     gap: 0.3rem;
@@ -20,7 +18,7 @@ form {
 
       outline: none;
       border: 1px solid var(--color-gray-5);
-      border-radius: 0.5rem;
+      border-radius: var(--border-radius);
     }
 
     input:user-invalid,

@@ -3,28 +3,20 @@ table {
   border-collapse: separate;
   border-spacing: 0;
 
-  /* margin-block-end: 4rem; */
-
   thead {
     background-color: var(--color-gray-3);
 
-    border-radius: 1rem;
+    tr th {
+      padding: 0.5rem 2rem;
 
-    tr {
-      border-radius: 1rem;
+      &:first-child {
+        border-top-left-radius: var(--border-radius);
+        border-bottom-left-radius: var(--border-radius);
+      }
 
-      th {
-        padding: 0.5rem 2rem;
-
-        &:first-child {
-          border-top-left-radius: 0.5rem;
-          border-bottom-left-radius: 0.5rem;
-        }
-
-        &:last-child {
-          border-top-right-radius: 0.5rem;
-          border-bottom-right-radius: 0.5rem;
-        }
+      &:last-child {
+        border-top-right-radius: var(--border-radius);
+        border-bottom-right-radius: var(--border-radius);
       }
     }
   }
