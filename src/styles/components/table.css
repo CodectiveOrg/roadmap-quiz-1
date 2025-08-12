@@ -30,6 +30,12 @@ table {
   tbody tr {
     border-bottom: 1px solid var(--color-gray-5);
     color: var(--color-gray-10);
+    td {
+      overflow: hidden;
+      max-inline-size: 10ch;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
   }
 
   tbody tr:last-child {
