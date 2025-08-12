@@ -1,29 +1,29 @@
 export class LibraryManager {
-    #books;
+  #books;
 
-    constructor(books) {
-        this.#books = [...books];
-    }
+  constructor(books) {
+    this.#books = books.map((book) => book.clone());
+  }
 
-    get books () {
-        return this.#books;
-    }
+  get books() {
+    return this.#books;
+  }
 
-    addBook (book) {
-        this.#books = [...this.#books , book];
-    }
+  addBook(book) {
+    this.#books = [...this.#books, book];
+  }
 
-    editBook(row, book) {
-        this.#books[row - 1] = book;
-    }
+  editBook(row, book) {
+    this.#books[row - 1] = book;
+  }
 
-    removeBook(row) {
-        const tempBooks = this.#books;
-        tempBooks.splice(row - 1 , 1);
-        this.#books = tempBooks;
-    }
+  removeBook(row) {
+    const tempBooks = this.#books;
+    tempBooks.splice(row - 1, 1);
+    this.#books = tempBooks;
+  }
 
-    clone() {
-
-    }
+  clone() {
+    return new LibraryManager(this.#books);
+  }
 }

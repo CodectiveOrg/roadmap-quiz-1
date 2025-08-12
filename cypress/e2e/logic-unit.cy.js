@@ -1,12 +1,17 @@
 // Unit-like tests for the pure JavaScript modules (no DOM involved)
 
 const importModules = () =>
-  cy.window().then(() =>
-    Promise.all([
-      import("/src/scripts/book.js"),
-      import("/src/scripts/library-manager.js"),
-    ]).then(([bookMod, lmMod]) => ({ Book: bookMod.Book, LibraryManager: lmMod.LibraryManager })),
-  );
+  cy
+    .window()
+    .then(() =>
+      Promise.all([
+        import("/src/scripts/book.js"),
+        import("/src/scripts/library-manager.js"),
+      ]).then(([bookMod, lmMod]) => ({
+        Book: bookMod.Book,
+        LibraryManager: lmMod.LibraryManager,
+      })),
+    );
 
 describe("Pure JS modules: Book and LibraryManager", () => {
   beforeEach(() => {
@@ -22,7 +27,11 @@ describe("Pure JS modules: Book and LibraryManager", () => {
 
       const copy = original.clone();
       expect(copy).to.not.equal(original);
-      expect(copy).to.deep.include({ title: "Title", author: "Author", description: "Desc" });
+      expect(copy).to.deep.include({
+        title: "Title",
+        author: "Author",
+        description: "Desc",
+      });
 
       // Mutating the clone must not affect original
       copy.title = "Changed";
@@ -54,7 +63,11 @@ describe("Pure JS modules: Book and LibraryManager", () => {
       const manager = new LibraryManager([new Book("X", "Y", "Z")]);
       manager.addBook({ title: "T", author: "A", description: "D" });
       expect(manager.books).to.have.length(2);
-      expect(manager.books[1]).to.include({ title: "T", author: "A", description: "D" });
+      expect(manager.books[1]).to.include({
+        title: "T",
+        author: "A",
+        description: "D",
+      });
     });
   });
 
@@ -65,7 +78,11 @@ describe("Pure JS modules: Book and LibraryManager", () => {
         new Book("Two", "B", "D2"),
       ]);
       manager.editBook(2, { title: "Two*", author: "B*", description: "D2*" });
-      expect(manager.books[1]).to.deep.include({ title: "Two*", author: "B*", description: "D2*" });
+      expect(manager.books[1]).to.deep.include({
+        title: "Two*",
+        author: "B*",
+        description: "D2*",
+      });
       expect(manager.books[0].title).to.eq("One");
     });
   });
@@ -104,5 +121,3 @@ describe("Pure JS modules: Book and LibraryManager", () => {
     });
   });
 });
-
-

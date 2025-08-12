@@ -1,22 +1,22 @@
 .icon-button {
-    display: flex;
+  display: flex;
 
-    background-color: transparent;
+  background-color: transparent;
 
-    border: none;
-    border-radius: var(--border-radius);
+  border: none;
+  border-radius: var(--border-radius);
 
-    cursor: pointer;
+  cursor: pointer;
 
-    transition: var(--transition);
+  transition: var(--transition);
 
-    padding: 0.5rem;
+  padding: 0.5rem;
 
-    &:hover {
-        background-color: var(--color-gray-3);
-    }
+  &:hover {
+    background-color: var(--color-gray-3);
+  }
 
-    .icon {
-        max-inline-size: 1.25rem;
-    }
+  .icon {
+    max-inline-size: 1.25rem;
+  }
 }
