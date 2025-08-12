@@ -22,11 +22,9 @@ form {
 
       border-radius: var(--border-radius);
 
-      &:valid {
-        border-color: var(--color-gray-10);
-      }
+      border-color: var(--color-gray-10);
 
-      &:invalid {
+      &:user-invalid {
         border-color: var(--color-red-6);
       }
     }

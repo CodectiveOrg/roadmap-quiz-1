@@ -1,10 +1,8 @@
 class LibraryManager {
-  #books = [];
+  #books;
 
   constructor(books) {
-    for (const book of books) {
-      this.#books.push(this.clone(book));
-    }
+    this.#books = books.map((book) => book.clone());
   }
 
   get books() {
@@ -16,17 +14,15 @@ class LibraryManager {
   }
 
   editBook(row, book) {
-    const index = row - 1;
-    this.#books[index] = this.clone(book);
+    this.#books[row - 1] = book;
   }
 
   removeBook(row) {
-    const index = row - 1;
-    this.#books.splice(index, 1);
+    this.#books.splice(row - 1, 1);
   }
 
-  clone(book) {
-    return structuredClone(book);
+  clone() {
+    return new LibraryManager(this.#books);
   }
 }
 

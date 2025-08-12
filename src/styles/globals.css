@@ -22,7 +22,7 @@ body {
 
   block-size: 100dvh;
 
-  padding-block: 0.5rem;
+  padding-inline: 0.5rem;
 
   background-color: var(--color-gray-1);
 

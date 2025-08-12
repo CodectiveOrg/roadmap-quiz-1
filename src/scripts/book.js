@@ -1,4 +1,8 @@
 class Book {
+  title;
+  author;
+  description;
+
   constructor(title, author, description) {
     this.title = title;
     this.author = author;
@@ -6,11 +10,7 @@ class Book {
   }
 
   clone() {
-    return structuredClone({
-      title: this.title,
-      author: this.author,
-      description: this.description,
-    });
+    return new Book(this.title, this.author, this.description);
   }
 }
 
