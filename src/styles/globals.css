@@ -16,8 +16,6 @@ a {
 }
 
 body {
-  position: relative;
-
   max-inline-size: 60rem;
 
   block-size: 100dvh;
@@ -30,9 +28,9 @@ body {
 
   margin-inline: auto;
 
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  display: grid;
+  grid-template-rows: 1fr auto 1fr;
+  gap: 0.5rem;
 
   main {
     display: grid;
