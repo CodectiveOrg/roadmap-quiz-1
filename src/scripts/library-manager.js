@@ -2,7 +2,7 @@ export class LibraryManager {
   #books = [];
 
   constructor(books) {
-    books.map((book) => this.#books.add(book));
+    books.map((book) => this.#books.push(book));
   }
 
   get books() {
@@ -10,7 +10,7 @@ export class LibraryManager {
   }
 
   addBook(book) {
-    this.#books.add(book);
+    this.#books.push(book);
   }
 
   editBook(row, book) {
@@ -18,7 +18,7 @@ export class LibraryManager {
   }
 
   removeBook(row) {
-    this.#books.delete(row - 1);
+    this.#books.splice(row, 1);
   }
 
   clone() {
