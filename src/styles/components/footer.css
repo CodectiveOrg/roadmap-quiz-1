@@ -1,8 +1,4 @@
 footer {
-  display: flex;
-  flex: 1;
-  justify-content: center;
-  align-items: end;
-  block-size: 16rem;
-  padding-block-end: 0.75rem;
+  text-align: center;
+  padding-block-end: 0.5rem;
 }
