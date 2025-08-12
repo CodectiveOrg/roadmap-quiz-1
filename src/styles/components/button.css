@@ -3,4 +3,5 @@ button {
   block-size: 1.75rem;
   border-radius: var(--border-radius);
   border: none;
+  cursor: pointer;
 }
