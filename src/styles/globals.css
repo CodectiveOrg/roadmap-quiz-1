@@ -12,6 +12,7 @@ body {
   color: var(--color-gray-10);
   margin: 0 auto;
   padding-block-start: 4rem;
+  padding-inline: 1rem;
 
   main {
     display: flex;
