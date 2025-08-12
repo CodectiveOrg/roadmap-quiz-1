@@ -1,0 +1,26 @@
+.actions {
+  .button {
+    border: none;
+
+    padding: 0.5rem 1rem;
+
+    border-radius: 0.2rem;
+
+    &:nth-child(1) {
+      background-color: var(--color-gray-1);
+    }
+
+    &:nth-child(2) {
+      background-color: var(--color-blue-6);
+      color: var(--color-gray-1);
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:active {
+      scale: 98%;
+    }
+  }
+}

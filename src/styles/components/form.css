@@ -1,0 +1,32 @@
+form {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "title auther"
+    "description description"
+    "actions actions";
+  gap: 1rem;
+
+  .field {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .field:nth-child(1) {
+    grid-area: title;
+  }
+
+  .field:nth-child(2) {
+    grid-area: auther;
+  }
+
+  .field:nth-child(3) {
+    grid-area: description;
+  }
+
+  .actions {
+    grid-area: actions;
+
+    margin-inline-start: auto;
+  }
+}

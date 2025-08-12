@@ -1,0 +1,12 @@
+.icon-button {
+  border: none;
+  background-color: transparent;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:active {
+    scale: 98%;
+  }
+}
