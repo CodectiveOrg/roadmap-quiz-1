@@ -2,5 +2,7 @@ footer {
   display: grid;
   place-content: center;
 
-  font-weight: 600;
+  font-weight: 500;
+
+  color: var(--color-gray-10);
 }
