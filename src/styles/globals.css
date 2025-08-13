@@ -1,0 +1,14 @@
+:root {
+  --color-primary: hsl(220 90% 56%);
+  --color-surface: hsl(0 0% 100%);
+  --color-text: hsl(220 10% 10%);
+  --border-color: hsl(220 20% 88%);
+}
+
+body {
+  max-inline-size: 60rem;         
+  padding-inline: 1rem;   
+  margin-inline: auto;    
+  background-color: var(--color-gray-1);
+  color: var(--color-gray-10);
+}

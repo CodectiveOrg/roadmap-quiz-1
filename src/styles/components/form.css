@@ -1,0 +1,30 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  margin-inline-start: 5rem;
+ margin-block-start: 5rem;
+  gap: 1.2rem;
+}
+.row {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+}
+.input-form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.3rem;
+  inline-size: 40rem;
+}
+.desc-form{
+   display: flex;
+ justify-content: center;
+ flex-direction: column;
+ inline-size: 82.3rem;
+ margin-inline-start: 16rem;
+}
+
+
+
+
