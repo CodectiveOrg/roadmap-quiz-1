@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Codective, sans-serif;
+}
+
+body {
+  max-inline-size: 60rem;
+  block-size: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  row-gap: 2rem;
+  background-color: var(--color-gray-1);
+  color: var(--color-gray-10);
+  margin: 0 auto;
+  padding-block-start: 3rem;
+  padding-inline: 2rem;
+
+  main {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+}

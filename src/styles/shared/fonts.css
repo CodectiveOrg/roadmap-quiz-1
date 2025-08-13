@@ -1,0 +1,24 @@
+@font-face {
+  font-style: normal;
+  font-weight: 400;
+  font-family: Codective;
+  src: url("/assets/fonts/codective/regular.ttf");
+}
+@font-face {
+  font-style: italic;
+  font-weight: 400;
+  font-family: Codective;
+  src: url("/assets/fonts/codective/italic.ttf");
+}
+@font-face {
+  font-style: normal;
+  font-weight: 700;
+  font-family: Codective;
+  src: url("/assets/fonts/codective/bold.ttf");
+}
+@font-face {
+  font-style: italic;
+  font-weight: 700;
+  font-family: Codective;
+  src: url("/assets/fonts/codective/bold-italic.ttf");
+}

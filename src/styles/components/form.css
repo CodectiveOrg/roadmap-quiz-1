@@ -1,0 +1,59 @@
+form {
+  display: grid;
+  /* grid-template-areas: "field field" "description description" "actions actions"; */
+  gap: 1rem;
+
+  .field:nth-child(3) {
+    grid-column: 1/3;
+  }
+
+  div.actions {
+    grid-column: 1/3;
+  }
+
+  label {
+    color: var(--color-gray-10);
+    display: block;
+    padding: 0.25rem;
+  }
+
+  input,
+  textarea {
+    border: 1px solid var(--color-gray-5);
+    border-radius: var(--border-radius);
+    outline: none;
+    block-size: 2rem;
+    inline-size: 100%;
+    padding-inline: 0.75rem;
+    font-size: medium;
+
+    &:user-invalid {
+      border: 1px solid var(--color-red-6);
+    }
+  }
+
+  textarea {
+    resize: none;
+    block-size: 4rem;
+  }
+
+  div.actions {
+    display: flex;
+    justify-content: end;
+    gap: 0.75rem;
+
+    button[type="reset"] {
+      color: var(--color-gray-10);
+      background-color: var(--color-gray-1);
+    }
+
+    button[type="submit"] {
+      color: var(--color-gray-1);
+      background-color: var(--color-blue-6);
+
+      &:hover {
+        background-color: var(--color-blue-7);
+      }
+    }
+  }
+}

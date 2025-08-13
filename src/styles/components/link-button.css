@@ -1,0 +1,11 @@
+a.link-button {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--color-gray-10);
+
+  img.icon {
+    inline-size: 1.5rem;
+    margin-inline: 0.5rem;
+  }
+}
