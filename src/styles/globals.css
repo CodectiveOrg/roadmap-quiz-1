@@ -1,0 +1,32 @@
+html {
+  box-sizing: border-box;
+
+  margin: 0;
+  padding: 0;
+
+  font-family: Codective, sans-serif;
+
+  display: grid;
+  place-items: center;
+
+  body {
+    max-inline-size: 60rem;
+    padding-inline: 1rem;
+
+    background-color: var(--color-gray-1);
+    color: var(--color-gray-10);
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .actions {
+      gap: 1rem;
+    }
+
+    table > thead {
+      background-color: var(--color-gray-3);
+    }
+  }
+}
