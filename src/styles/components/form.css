@@ -1,30 +1,37 @@
-.form {
-  display: flex;
-  flex-direction: column;
-  margin-inline-start: 5rem;
- margin-block-start: 5rem;
+
+form {
+  display: grid;
+ grid-template-columns: 1fr 1fr;
+  align-items:start;
+  margin-inline-start: 0.5rem;
+  margin-block-start: 3rem;
   gap: 1.2rem;
+
 }
-.row {
+
+.field{
   display: flex;
-  justify-content: center;
-  gap: 1.2rem;
+  flex-direction:column;
+  margin-block-end: 1rem;
+ min-inline-size: 0;
 }
-.input-form {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  gap: 0.3rem;
-  inline-size: 40rem;
+.field:nth-child(3){
+  grid-column: 1/-1;
 }
-.desc-form{
-   display: flex;
- justify-content: center;
- flex-direction: column;
- inline-size: 82.3rem;
- margin-inline-start: 16rem;
+.field.error,input:invalid,
+ textarea:invalid{
+    border:1px solid var(--color-red-6) ;}
+
+label{
+  margin-block-end: 0.5rem;
 }
+input[type="text"]{
+  box-sizing: border-box;
+  padding: 0.5rem;
+  font-size: 1rem;
 
-
-
-
+}
+textarea #description{
+min-height: 6rem;
+  resize: vertical;
+}

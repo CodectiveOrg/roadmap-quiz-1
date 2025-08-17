@@ -4,11 +4,35 @@
   --color-text: hsl(220 10% 10%);
   --border-color: hsl(220 20% 88%);
 }
+html{
+    font-family: Codective,sans-serif;
+}
+
+main{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
 
 body {
-  max-inline-size: 60rem;         
-  padding-inline: 1rem;   
-  margin-inline: auto;    
+  display: grid;
+  grid-template-rows:auto 1fr auto;
+  row-gap: 1.5rem;
+  max-inline-size: 60rem;
+  block-size: 100vh;
+  padding-inline:2rem;
+  margin-inline: auto;
   background-color: var(--color-gray-1);
   color: var(--color-gray-10);
+  border-bottom-left-radius: var(--border-radius);
+  margin: 0 auto;
+}
+
+table{
+  border-collapse: collapse;
+}
+
+thead{
+  background-color: var(--color-gray-3);
+  font-family: Codective ,sans-serif;
 }

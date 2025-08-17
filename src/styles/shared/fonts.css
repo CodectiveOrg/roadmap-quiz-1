@@ -1,30 +1,30 @@
 html {
-  font-family: "Codective", sans-serif;
+  font-family: Codective, sans-serif;
 }
 @font-face {
-  font-family: "Codective", sans-serif;
+  font-family: Codective, sans-serif;
   font-style: normal;
   font-weight: 400;
-  src: url(/roadmap-quiz-1/assets/fonts/codective/regular.ttf);
+  src: url(/assets/fonts/codective/regular.ttf);
 }
 
 @font-face {
-  font-family: "Codective", sans-serif;
+  font-family: Codective, sans-serif;
   font-style: italic;
   font-weight: 400;
-  src: url(/roadmap-quiz-1/assets/fonts/codective/italic.ttf);
+  src: url(/assets/fonts/codective/italic.ttf);
 }
 
 @font-face {
-  font-family: "Codective", sans-serif;
+  font-family: Codective, sans-serif;
   font-style: normal;
   font-weight: 700;
-  src: url(/roadmap-quiz-1/assets/fonts/codective/bold.ttf);
+  src: url(/assets/fonts/codective/bold.ttf);
 }
 
 @font-face {
-  font-family: "Codective", sans-serif;
+  font-family: Codective , sans-serif;
   font-style: italic;
   font-weight: 700;
-  src: url(/roadmap-quiz-1/assets/fonts/codective/bold-italic.ttf);
+  src: url(/assets/fonts/codective/bold-italic.ttf);
 }
