@@ -1,23 +1,76 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta
       name="viewport"
       content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
     />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <!-- title -->
-    <!-- css links -->
-    <!-- javascript link -->
+    <meta charset="UTF-8" />
+    <title>Library Management System</title>
+    <link rel="stylesheet" href="/src/styles/globals.css" />
+
+    <link rel="stylesheet" href="/src/styles/shared/colors.css" />
+    <link rel="stylesheet" href="/src/styles/shared/fonts.css" />
+    <link rel="stylesheet" href="/src/styles/shared/shapes.css" />
+
+    <link rel="stylesheet" href="/src/styles/components/button.css" />
+    <link rel="stylesheet" href="/src/styles/components/footer.css" />
+    <link rel="stylesheet" href="/src/styles/components/form.css" />
+    <link rel="stylesheet" href="/src/styles/components/header.css" />
+    <link rel="stylesheet" href="/src/styles/components/icon-button.css" />
+    <link rel="stylesheet" href="/src/styles/components/link-button.css" />
+    <link rel="stylesheet" href="/src/styles/components/table.css" />
+    
+    <script type="module" src="/src/scripts/master.js"></script>
   </head>
   <body>
-    <!-- header -->
+    <header>
+      <h1 class="logo">Library Management System</h1>
+      <a class="link-button" href="https://github.com/mazaherireza">
+        <img class="icon" src="/assets/icons/github.svg" alt="" />
+        GitHub
+      </a>
+    </header>
     <main>
-      <!-- form -->
+      <form>
+        <div class="field">
+          <label for="title">Title</label>
+          <input type="text" name="title" id="title" required />
+        </div>
+        <div class="field">
+          <label for="author">Author</label>
+          <input
+            type="text"
+            name="author"
+            id="author"
+            autocomplete="name"
+            required
+          />
+        </div>
+        <div class="field">
+          <label for="description">Description</label>
+          <textarea
+            name="description"
+            id="description"
+            minlength="3"
+            required
+          ></textarea>
+        </div>
+        <div class="actions">
+          <button class="button" type="reset">Cancel</button>
+          <button class="button" type="submit">Submit</button>
+        </div>
+      </form>
       <table>
-        <!-- thead -->
+        <thead>
+          <th>Row</th>
+          <th>Title</th>
+          <th>Author</th>
+          <th>Description</th>
+          <th>Actions</th>
+        </thead>
         <tbody>
-          <!-- example start -->
           <tr>
             <th>1</th>
             <td>Lorem ipsum dolor sit.</td>
@@ -28,15 +81,18 @@
             </td>
             <td>
               <div class="actions">
-                <!-- edit button -->
-                <!-- remove button -->
+                <button class="icon-button">
+                  <img src="/assets/icons/edit.svg" alt="Edit Icon" />
+                </button>
+                <button class="icon-button">
+                  <img src="/assets/icons/remove.svg" alt="Remove Icon" />
+                </button>
               </div>
             </td>
           </tr>
-          <!-- example end -->
         </tbody>
       </table>
     </main>
-    <!-- footer -->
+    <footer>Copyright &copy; 2025 codective.ir</footer>
   </body>
 </html>
