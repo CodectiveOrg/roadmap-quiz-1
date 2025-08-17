@@ -21,6 +21,7 @@ class Master {
 
   #fillForm() {
     if (typeof this.#bookOfInterestIndex !== "number") {
+
       return;
     }
 
@@ -29,6 +30,7 @@ class Master {
     document.querySelector(`form input[name="title"]`).value = book.title;
     document.querySelector(`form input[name="author"]`).value = book.author;
     document.querySelector(`form textarea`).value = book.description;
+
   }
 
   #addFormEventListeners() {
@@ -37,25 +39,50 @@ class Master {
     form.onreset = (e) => this.#handleFormReset(e);
   }
 
+
   #handleFormSubmit(e) {
     e.preventDefault();
 
-    const formData = new FormData(e.currentTarget);
+    const form = e.currentTarget;
+    const titleInput = form.querySelector('input[name="title"]');
+    const authorInput = form.querySelector('input[name="author"]');
+    const descInput  = form.querySelector('textarea');
+
+
+    [titleInput, authorInput, descInput].forEach(inp => {
+      inp.classList.remove('error');
+    });
+
+    let hasError = false;
+
+    if (!titleInput.value.trim()) {
+      titleInput.classList.add('error');
+      hasError = true;
+    }
+    if (!authorInput.value.trim()) {
+      authorInput.classList.add('error');
+      hasError = true;
+    }
+    if (!descInput.value.trim()) {
+      descInput.classList.add('error');
+      hasError = true;
+    }
+
+    if (hasError) return;
 
     const book = {
-      title: formData.get("title"),
-      author: formData.get("author"),
-      description: formData.get("description"),
+      title: titleInput.value.trim(),
+      author: authorInput.value.trim(),
+      description: descInput.value.trim()
     };
 
-    if (typeof this.#bookOfInterestIndex === "number") {
+    if (typeof this.#bookOfInterestIndex === 'number') {
       this.#libraryManager.editBook(this.#bookOfInterestIndex + 1, book);
     } else {
       this.#libraryManager.addBook(book);
     }
 
-    e.currentTarget.reset();
-
+    form.reset();
     this.#bookOfInterestIndex = null;
     this.#render();
   }

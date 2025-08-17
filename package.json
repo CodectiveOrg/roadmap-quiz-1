@@ -9,6 +9,7 @@
   },
   "devDependencies": {
     "cypress": "^14.5.4",
-    "live-server": "^1.2.2"
+    "live-server": "^1.2.2",
+    "prettier": "^3.6.2"
   }
 }

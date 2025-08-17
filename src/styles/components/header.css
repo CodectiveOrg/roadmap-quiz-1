@@ -1,0 +1,22 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.link-button{
+  margin-block-end: 1rem;
+}
+.icon {
+  inline-size: 1.5rem;
+  margin-block-start: 0.5rem;
+  padding-inline-end: 0.3rem;
+}
+logo{
+  gap:1rem;
+}
+
+.link-button {
+  text-decoration: none;
+  color: hsl(0, 0%, 15%);
+}
+

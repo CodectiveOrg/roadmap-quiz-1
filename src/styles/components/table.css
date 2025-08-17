@@ -1,0 +1,11 @@
+.table th {
+  background-color: var(--color-gray-3);
+}
+.icon-button {
+  border: none;
+  background: none;
+  padding: 0;
+}
+table tbody tr:not(:last-child) {
+  border-bottom: 1px solid var(--color-gray-5);
+}

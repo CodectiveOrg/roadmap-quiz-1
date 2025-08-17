@@ -1,0 +1,14 @@
+.actions {
+    display: flex;
+    gap: 1rem;
+    justify-content:flex-end;
+}
+
+.actions .img-button {
+    background: none;
+    inline-size: 1.5rem;
+    border: none;
+    margin-inline-end: 0.2rem;
+    padding-inline-end: 2rem;
+    cursor: pointer;
+}

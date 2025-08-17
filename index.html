@@ -1,42 +1,146 @@
 <!doctype html>
-<html>
+<html lang="en" >
   <head>
     <meta
       name="viewport"
       content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
     />
+    <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <!-- title -->
-    <!-- css links -->
-    <!-- javascript link -->
+    <title>Library Management System</title>
+
+    <link rel="stylesheet"
+     href="/src/styles/components/button.css" />
+
+    <link
+      rel="stylesheet"
+      href="/src/styles/components/footer.css"
+    />
+
+    <link
+            rel="stylesheet"
+            href="/src/styles/components/form.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="/src/styles/components/header.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="/src/styles/components/icon-button.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="/src/styles/components/link-button.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="/src/styles/components/table.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="/src/styles/shared/colors.css"
+    />
+
+    <link rel="stylesheet"
+     href="/src/styles/shared/fonts.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="/src/styles/shared/shapes.css"
+    />
+
+    <link rel="stylesheet"
+     href="/src/styles/globals.css" />
+
+    <script src="/src/scripts/master.js" type="module"></script>
   </head>
+
   <body>
-    <!-- header -->
+
+    <header>
+      <h1 class="logo">Library Management System</h1>
+
+      <a  class="link-button" href="https://github.com/zeinabvishkayee">
+        <img
+          src="/assets/icons/github.svg"
+          alt=""
+          class="icon"
+        />GitHub
+      </a>
+    </header>
+
     <main>
       <!-- form -->
+      <!--Title-->
+      <form >
+      <div class="field">
+           <label for="title">Title</label>
+            <input
+              type="text"
+              id="title"
+              name="title"
+              autocomplete="name"
+              required
+            />
+      </div>
+          <!--Author-->
+      <div class="field">
+            <label for="author">Author</label>
+            <input
+              type="text"
+              id="author"
+              name="author"
+              autocomplete="name"
+              required
+            />
+          </div>
+
+        <!--Description-->
+      <div class="field">
+          <label for="description">Description</label>
+          <textarea
+            id="description"
+            name="description"
+            minlength="3"
+            autocomplete="name"
+            required
+          ></textarea>
+      </div>
+
+        <div class="actions">
+          <button type="reset" class="button" >
+            Cancel
+          </button>
+          <button type="submit" class="button">Submit</button>
+        </div>
+      </form>
+
       <table>
         <!-- thead -->
-        <tbody>
-          <!-- example start -->
+        <thead>
           <tr>
-            <th>1</th>
-            <td>Lorem ipsum dolor sit.</td>
-            <td>Lorem ipsum</td>
-            <td>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci
-              alias beatae quas! A, ipsam, officiis.
-            </td>
-            <td>
-              <div class="actions">
-                <!-- edit button -->
-                <!-- remove button -->
-              </div>
-            </td>
+            <th>Row</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Description</th>
+            <th>Actions</th>
           </tr>
-          <!-- example end -->
+        </thead>
+
+        <tbody>
+
         </tbody>
       </table>
+
     </main>
     <!-- footer -->
+    <footer>codective.ir</footer>
   </body>
 </html>

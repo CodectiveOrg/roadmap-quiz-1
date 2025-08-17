@@ -1,0 +1,20 @@
+.actions{
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+
+}
+
+.actions>.button {
+  border: none;
+
+  padding: 0.7rem 1.5rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+button:hover {
+  background-color: var(--color-primary);
+  color: var(--color-surface);
+}
+
